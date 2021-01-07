@@ -1,14 +1,46 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/home/home",
+    "pages/info/info",
+    "pages/remind/remind",
+    "pages/locate/locate",
+    "pages/route/route",
+    "pages/switch/switch"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTitleText": "老人行无忧小程序",
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",
-  "style": "v2"
+  "style": "v2",
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/info/info",
+      "iconPath": "./assets/home.png",
+      "selectedIconPath": "./assets/home.png"
+    },{
+      "pagePath": "pages/remind/remind",
+      "text": "text",
+      "iconPath": "./assets/home.png",
+      "selectedIconPath": "./assets/home.png"
+    },{
+      "pagePath": "pages/home/home",
+      "text": "text",
+      "iconPath": "./assets/home.png",
+      "selectedIconPath": "./assets/home.png"
+    },{
+      "pagePath": "pages/locate/locate",
+      "text": "text",
+      "iconPath": "./assets/home.png",
+      "selectedIconPath": "./assets/home.png"
+    },{
+      "pagePath": "pages/route/route",
+      "text": "text",
+      "iconPath": "./assets/home.png",
+      "selectedIconPath": "./assets/home.png"
+    }]
+  }
 }
