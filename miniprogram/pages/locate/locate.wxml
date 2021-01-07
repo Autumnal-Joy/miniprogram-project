@@ -1,2 +1,11 @@
-<!--pages/locate/locate.wxml-->
-<text>pages/locate/locate.wxml</text>
+<!-- pages/locate/locate.wxml -->
+<view class="locate">
+  <view class="box">
+    <view class="image">
+      <image src="../../assets/location.png" alt="定位" mode="widthFix" />
+    </view>
+    <view class="text">
+      <text class="" selectable="false" space="false" decode="false">点击获取实时位置</text>
+    </view>
+  </view>
+</view>

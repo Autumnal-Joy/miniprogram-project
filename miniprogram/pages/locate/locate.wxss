@@ -1,1 +1,15 @@
 /* pages/locate/locate.wxss */
+.locate {
+  display: flex;
+}
+.locate .box {
+  margin: auto;
+  margin-top: 33%;
+  width: 250rpx;
+}
+.locate .box .image image {
+  width: 250rpx;
+}
+.locate .box .text text {
+  font-size: small;
+}

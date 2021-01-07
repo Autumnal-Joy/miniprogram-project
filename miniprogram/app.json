@@ -19,28 +19,24 @@
   "tabBar": {
     "list": [{
       "pagePath": "pages/info/info",
-      "iconPath": "./assets/home.png",
-      "selectedIconPath": "./assets/home.png"
+      "iconPath": "./assets/info.png",
+      "selectedIconPath": "./assets/info_s.png"
     },{
       "pagePath": "pages/remind/remind",
-      "text": "text",
-      "iconPath": "./assets/home.png",
-      "selectedIconPath": "./assets/home.png"
+      "iconPath": "./assets/remind.png",
+      "selectedIconPath": "./assets/remind_s.png"
     },{
       "pagePath": "pages/home/home",
-      "text": "text",
       "iconPath": "./assets/home.png",
-      "selectedIconPath": "./assets/home.png"
+      "selectedIconPath": "./assets/home_s.png"
     },{
       "pagePath": "pages/locate/locate",
-      "text": "text",
-      "iconPath": "./assets/home.png",
-      "selectedIconPath": "./assets/home.png"
+      "iconPath": "./assets/locate.png",
+      "selectedIconPath": "./assets/locate_s.png"
     },{
       "pagePath": "pages/route/route",
-      "text": "text",
-      "iconPath": "./assets/home.png",
-      "selectedIconPath": "./assets/home.png"
+      "iconPath": "./assets/route.png",
+      "selectedIconPath": "./assets/route_s.png"
     }]
   }
 }
