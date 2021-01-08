@@ -1,2 +1,12 @@
-<!--pages/switch/switch.wxml-->
-<text>pages/switch/switch.wxml</text>
+<!-- pages/switch/switch.wxml -->
+<view class="switch">
+  <view class="text">在下方输入所在地</view>
+  <view class="search-box">
+    <view class="search-input">
+      <input type="text" />
+    </view>
+    <view class="search-icon">
+      <image class="image" src="./icons/search.png" mode="widthFix"></image>
+    </view>
+  </view>
+</view>
