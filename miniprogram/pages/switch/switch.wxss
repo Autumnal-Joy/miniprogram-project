@@ -1,16 +1,36 @@
+page {
+  height: 100%;
+}
 .switch {
+  height: 100%;
+}
+.switch .set {
+  height: 100%;
+  display: flex;
+  padding: 20rpx;
+  background-color: #dff8d6;
+}
+.switch .set .text {
+  margin: auto;
+  margin-top: 40%;
+  font-size: 95rpx;
+  border: 10rpx dotted black;
+  padding: 15rpx;
+  color: #981fde;
+}
+.switch .unset {
   display: flex;
   flex-direction: column;
   padding: 20rpx;
 }
-.switch .text {
+.switch .unset .text {
   margin: auto;
   margin-top: 200rpx;
   font-size: xx-large;
   border: 5rpx solid red;
   padding: 15rpx;
 }
-.switch .search-box {
+.switch .unset .search-box {
   margin-top: 40rpx;
   display: flex;
   flex-direction: row;
@@ -19,6 +39,13 @@
   height: 300rpx;
   align-items: center;
 }
-.switch .search-box .search-icon .image {
+.switch .unset .search-box .search-input {
+  height: 100%;
+}
+.switch .unset .search-box .search-input input {
+  font-size: 150rpx;
+  height: 100%;
+}
+.switch .unset .search-box .search-icon .image {
   width: 250rpx;
 }

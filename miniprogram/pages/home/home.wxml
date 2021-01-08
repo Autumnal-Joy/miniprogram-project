@@ -1,2 +1,4 @@
-<!--pages/home/home.wxml-->
-<text>pages/home/home.wxml</text>
+<!-- pages/home/home.wxml -->
+<navigator class="" target="" url="../switch/switch" hover-class="navigator-hover" open-type="navigate">
+  switch
+</navigator>

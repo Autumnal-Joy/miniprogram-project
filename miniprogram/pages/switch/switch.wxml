@@ -1,12 +1,17 @@
 <!-- pages/switch/switch.wxml -->
 <view class="switch">
-  <view class="text">在下方输入所在地</view>
-  <view class="search-box">
-    <view class="search-input">
-      <input type="text" />
-    </view>
-    <view class="search-icon">
-      <image class="image" src="./icons/search.png" mode="widthFix"></image>
+  <view class="set" wx:if="{{set}}">
+    <view class="text">语言已切换完成</view>
+  </view>
+  <view class="unset" wx:else>
+    <view class="text">在下方输入所在地</view>
+    <view class="search-box">
+      <view class="search-input">
+        <input type="text" model:value="{{language}}" />
+      </view>
+      <view class="search-icon" bind:tap="onSetLanguage">
+        <image class="image" src="./icons/search.png" mode="widthFix"></image>
+      </view>
     </view>
   </view>
 </view>
