@@ -2,3 +2,6 @@
 <navigator class="" target="" url="../switch/switch" hover-class="navigator-hover" open-type="navigate">
   switch
 </navigator>
+<view bind:tap="onGetLoc">
+  获取位置信息
+</view>

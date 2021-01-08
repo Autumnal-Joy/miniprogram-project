@@ -38,5 +38,10 @@
       "iconPath": "./assets/route.png",
       "selectedIconPath": "./assets/route_s.png"
     }]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "获取位置信息"
+    }
   }
 }
