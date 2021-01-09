@@ -1,1 +1,48 @@
 /* pages/home/home.wxss */
+.wrapper{
+  padding: top 0;
+  padding: bottom 100%; 
+}
+.homebg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.call{
+  margin-top: 280rpx;
+  text-align: center;
+  font-size: 50rpx;
+  font-weight: bold;
+  color: brown;
+}
+.calli{
+  position: absolute;
+  top: 100rpx;
+  left: 250rpx;
+  width: 280rpx;
+  z-index: 0;
+}
+.helpp{
+  margin-top: 510rpx;
+  text-align: center;
+  font-size: 50rpx;
+  font-weight: bold;
+  color: brown;
+}
+.helppi{
+  position: absolute;
+  top: 640rpx;
+  left: 225rpx;
+  width: 300rpx;
+  z-index: 0;
+}
+.phonei{
+  position: absolute;
+  top: 475rpx;
+  left: 20rpx;
+  width: 100rpx;
+  z-index: 0;
+}
