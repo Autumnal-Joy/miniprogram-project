@@ -1,48 +1,72 @@
-.switch {
-  height: 100%;
-}
-.switch .set {
-  height: 100%;
+mask .content {
   display: flex;
-  padding: 20rpx;
-  background-color: #dff8d6;
+  justify-content: center;
+  padding: 80rpx;
 }
-.switch .set .text {
-  margin: auto;
-  margin-top: 40%;
-  font-size: 95rpx;
-  border: 10rpx dotted black;
-  padding: 15rpx;
+mask .content scroll-view {
+  height: 1000rpx;
+  width: 600rpx;
+  background-color: #fff;
+}
+mask .content scroll-view .region .cities {
+  padding: 10rpx;
+  border-top: 4rpx solid #cccccc;
+}
+mask .content scroll-view .region .cities .word {
+  font-size: xx-large;
+  padding: 5rpx;
   color: #981fde;
+  font-weight: bold;
 }
-.switch .unset {
+mask .content scroll-view .region .cities .city {
+  border-top: 2rpx solid #cccccc;
+  font-size: x-large;
+  padding: 10rpx 30rpx;
+}
+.switch {
   display: flex;
   flex-direction: column;
-  padding: 20rpx;
 }
-.switch .unset .text {
-  margin: auto;
-  margin-top: 200rpx;
-  font-size: xx-large;
-  border: 5rpx solid red;
-  padding: 15rpx;
+.switch .top .image image {
+  width: 100rpx;
 }
-.switch .unset .search-box {
-  margin-top: 40rpx;
+.switch .middle .unset {
   display: flex;
-  flex-direction: row;
-  border: 15rpx #818aff dashed;
-  justify-content: space-between;
-  height: 300rpx;
   align-items: center;
+  padding: 30rpx;
+  justify-content: space-around;
 }
-.switch .unset .search-box .search-input {
-  height: 100%;
+.switch .middle .unset .text {
+  font-size: 80rpx;
+  color: #3d42a5;
+  font-weight: bold;
+  border: 1rpx solid black;
+  border-radius: 10rpx;
+  width: 400rpx;
+  height: 160rpx;
+  line-height: 160rpx;
+  text-align: center;
 }
-.switch .unset .search-box .search-input input {
-  font-size: 150rpx;
-  height: 100%;
+.switch .middle .unset .image image {
+  width: 270rpx;
 }
-.switch .unset .search-box .search-icon .image {
-  width: 250rpx;
+.switch .middle .set {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 335rpx;
+}
+.switch .middle .set .text {
+  text-align: center;
+  font-size: 100rpx;
+  color: #981fde;
+  font-weight: bold;
+  border: 10rpx solid #64ba1d;
+  border-radius: 10rpx;
+  padding: 40rpx 0;
+  background-color: #e7fede;
+  width: 100%;
+}
+.switch .bottom image {
+  width: 100%;
 }

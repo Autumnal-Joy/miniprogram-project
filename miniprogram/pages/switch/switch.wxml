@@ -1,17 +1,48 @@
 <!-- pages/switch/switch.wxml -->
-<view class="switch">
-  <view class="set" wx:if="{{set}}">
-    <view class="text">语言已切换完成</view>
-  </view>
-  <view class="unset" wx:else>
-    <view class="text">在下方输入所在地</view>
-    <view class="search-box">
-      <view class="search-input">
-        <input type="text" model:value="{{language}}" />
+<mask wx:if="{{mask}}" bind:hide="changeMask">
+  <view class="content">
+    <scroll-view scroll-y="true" scroll-top="0" scroll-left="0" scroll-with-animation="true" enable-back-to-top="true">
+      <view class="region">
+        <view class="cities" wx:for="{{region}}" wx:key="key">
+          <view class="word">{{item.firstWord}}</view>
+          <view class="city" wx:for="{{item.cities}}" wx:key="key" bind:tap="changeLanguage" data-city="{{item.name}}">
+            {{item.name}}
+          </view>
+        </view>
       </view>
-      <view class="search-icon" bind:tap="onSetLanguage">
-        <image class="image" src="./icons/search.png" mode="widthFix"></image>
+    </scroll-view>
+  </view>
+</mask>
+<view class="switch" hidden="{{!unset}}">
+  <view class="top">
+    <view class="image">
+      <image src="./icons/setting_s.png" mode="widthFix"></image>
+    </view>
+  </view>
+  <view class="middle">
+    <view class="unset">
+      <view class="text" bind:tap="changeMask">{{city?city:"选择地区"}}</view>
+      <view class="image">
+        <image src="./icons/search.png" mode="widthFix"></image>
       </view>
     </view>
+  </view>
+  <view class="bottom">
+    <image src="./icons/unset.png" mode="widthFix"></image>
+  </view>
+</view>
+<view class="switch" hidden="{{unset}}">
+  <view class="top">
+    <view class="image">
+      <image src="./icons/setting.png" mode="widthFix" bind:tap="changeState"></image>
+    </view>
+  </view>
+  <view class="middle">
+    <view class="set">
+      <view class="text">语言已切换完成</view>
+    </view>
+  </view>
+  <view class="bottom">
+    <image src="./icons/set.png" mode="widthFix"></image>
   </view>
 </view>
