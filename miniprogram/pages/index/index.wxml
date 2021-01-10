@@ -1,0 +1,26 @@
+<!-- pages/index/index.wxml -->
+<view class="index">
+  <view class="top">
+    <view class="image">
+      <image src="../../assets/home.png" mode="widthFix" bind:tap="onStart"></image>
+    </view>
+    <view class="text">点击左侧进入</view>
+  </view>
+  <view class="middle">
+    <swiper indicator-dots="true" autoplay="true" circular="true">
+      <block wx:for="{{swiper_items}}" wx:key="key">
+        <swiper-item>
+          <image src="{{item.url}}" mode="widthFix"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="bottom">
+    <view class="icon">
+      <image src="../home/homep/phone.png" mode="widthFix"></image>
+    </view>
+    <view class="icon">
+      <image src="../home/homep/helper.png" mode="widthFix"></image>
+    </view>
+  </view>
+</view>
