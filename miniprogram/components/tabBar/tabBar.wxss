@@ -1,4 +1,4 @@
-.tabbar {
+.table-bar {
   position: fixed;
   left: 0;
   bottom: 0;
@@ -10,12 +10,12 @@
   justify-content: space-around;
   border-top: 1px solid #d8d8d8;
 }
-.tabbar .image {
+.table-bar .images {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.tabbar .image image {
+.table-bar .images .image {
   width: 28px;
 }

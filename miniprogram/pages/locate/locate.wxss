@@ -6,6 +6,6 @@
 .locate .box .image image {
   width: 250rpx;
 }
-.locate .box .text text {
+.locate .box .text {
   font-size: small;
 }

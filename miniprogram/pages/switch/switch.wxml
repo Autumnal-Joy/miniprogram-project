@@ -46,4 +46,4 @@
     <image src="./icons/set.png" mode="widthFix"></image>
   </view>
 </view>
-<tabbar></tabbar>
+<table-bar></table-bar>

@@ -4,7 +4,7 @@
   height: 100vh;
   z-index: -1;
 }
-.background image {
+.background .image {
   position: fixed;
   width: 100%;
 }

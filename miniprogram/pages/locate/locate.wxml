@@ -6,8 +6,6 @@
     <view class="image">
       <image src="./icons/location.png" alt="定位" mode="widthFix" />
     </view>
-    <view class="text">
-      <text class="" selectable="false" space="false" decode="false">点击获取实时位置</text>
-    </view>
+    <view class="text">点击获取实时位置</view>
   </view>
 </view>

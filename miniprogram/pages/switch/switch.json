@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "mask":"../../components/mask/mask",
-    "tabbar":"../../components/tabBar/tabBar"
+    "mask": "../../components/mask/mask",
+    "table-bar": "../../components/tabBar/tabBar"
   }
 }
