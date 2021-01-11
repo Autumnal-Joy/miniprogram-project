@@ -78,8 +78,9 @@
           "scene": null
         },
         {
-          "name": "pages/info/info",
-          "pathName": "pages/info/info",
+          "name": "pages/info/setInfo/setInfo",
+          "pathName": "pages/info/setInfo/setInfo",
+          "query": "",
           "scene": null
         }
       ]

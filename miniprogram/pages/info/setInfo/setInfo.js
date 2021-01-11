@@ -7,7 +7,9 @@ Page({
    */
   data: {
     name: "",
-    birthday: 0,
+    birthday: "1900-01-01",
+    startday: "1900-01-01",
+    today: "2021-01-11",
     home: "",
     medicalHistory: [],
     emergencyCall: [],

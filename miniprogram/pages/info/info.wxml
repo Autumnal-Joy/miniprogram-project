@@ -4,7 +4,9 @@
   <view class="up">
     <to-switch></to-switch>
     <view class="update">
-      <view class="button">更新基本信息</view>
+      <navigator target="self" url="./setInfo/setInfo" hover-class="none" open-type="navigate">
+        <view class="button">更新基本信息</view>
+      </navigator>
     </view>
   </view>
   <view class="down">
