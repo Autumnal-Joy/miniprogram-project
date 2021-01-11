@@ -1,5 +1,6 @@
 .locate {
   display: flex;
+  flex-direction: column;
 }
 .locate .box {
   margin: auto;

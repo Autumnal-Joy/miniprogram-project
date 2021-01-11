@@ -1,0 +1,5 @@
+<view class="to-switch">
+  <navigator target="self" url="../../pages/switch/switch" open-type="navigate">
+    <image src="../../assets/setting.png" mode="widthFix"></image>
+  </navigator>
+</view>

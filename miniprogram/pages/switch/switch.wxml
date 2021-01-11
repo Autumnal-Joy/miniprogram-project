@@ -16,7 +16,7 @@
 <view class="switch" hidden="{{!unset}}">
   <view class="top">
     <view class="image">
-      <image src="./icons/setting_s.png" mode="widthFix"></image>
+      <image src="../../assets/setting_s.png" mode="widthFix"></image>
     </view>
   </view>
   <view class="middle">
@@ -34,7 +34,7 @@
 <view class="switch" hidden="{{unset}}">
   <view class="top">
     <view class="image">
-      <image src="./icons/setting.png" mode="widthFix" bind:tap="changeState"></image>
+      <image src="../../assets/setting.png" mode="widthFix" bind:tap="changeState"></image>
     </view>
   </view>
   <view class="middle">

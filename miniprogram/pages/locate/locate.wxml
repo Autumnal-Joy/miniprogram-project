@@ -1,4 +1,5 @@
 <!-- pages/locate/locate.wxml -->
+<to-switch></to-switch>
 <view class="locate">
   <view class="box">
     <view class="image">
