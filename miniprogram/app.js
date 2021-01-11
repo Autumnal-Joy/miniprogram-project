@@ -7,7 +7,17 @@ App({
     });
 
     this.globalData = {
-      language: "",
+      city: "",
     };
+
+    wx.getStorage({
+      key: "city",
+      success: result => {
+        console.log("获取本地缓存 city: " + result.data);
+        this.globalData.city = result.data;
+      },
+      fail: () => {},
+      complete: () => {},
+    });
   },
 });

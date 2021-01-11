@@ -242,9 +242,20 @@ Page({
   changeLanguage(event) {
     this.changeState();
     let city = event.target.dataset.city;
+
     app.globalData.city = city;
     this.setData({
-      city: city,
+      city,
+    });
+
+    wx.setStorage({
+      key: "city",
+      data: city,
+      success: result => {
+        console.log("设置本地缓存 city: " + city);
+      },
+      fail: () => {},
+      complete: () => {},
     });
   },
 
