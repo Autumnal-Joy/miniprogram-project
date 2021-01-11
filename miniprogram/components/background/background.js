@@ -9,7 +9,10 @@ Component({
     // myProperty2: String,
   },
 
-  data: {}, // 私有数据，可用于模板渲染
+  data: {
+    bgImage:
+      "cloud://chuyan-5g4flozv2fa0a4f5.6368-chuyan-5g4flozv2fa0a4f5-1304712061/images/bg.png",
+  }, // 私有数据，可用于模板渲染
 
   // 生命周期函数，可以为函数，或一个在methods段中定义的方法名
 

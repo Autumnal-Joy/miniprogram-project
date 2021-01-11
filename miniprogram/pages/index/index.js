@@ -7,27 +7,33 @@ Page({
     swiper_items: [
       {
         key: 0,
-        url: "./images/people.png",
+        url:
+          "cloud://chuyan-5g4flozv2fa0a4f5.6368-chuyan-5g4flozv2fa0a4f5-1304712061/pages/index/people.png",
       },
       {
         key: 1,
-        url: "./images/helper.jpg",
+        url:
+          "cloud://chuyan-5g4flozv2fa0a4f5.6368-chuyan-5g4flozv2fa0a4f5-1304712061/pages/index/helper.jpg",
       },
       {
         key: 2,
-        url: "./images/info.jpg",
+        url:
+          "cloud://chuyan-5g4flozv2fa0a4f5.6368-chuyan-5g4flozv2fa0a4f5-1304712061/pages/index/info.jpg",
       },
       {
         key: 3,
-        url: "./images/locate.jpg",
+        url:
+          "cloud://chuyan-5g4flozv2fa0a4f5.6368-chuyan-5g4flozv2fa0a4f5-1304712061/pages/index/locate.jpg",
       },
       {
         key: 4,
-        url: "./images/remind.jpg",
+        url:
+          "cloud://chuyan-5g4flozv2fa0a4f5.6368-chuyan-5g4flozv2fa0a4f5-1304712061/pages/index/remind.jpg",
       },
       {
         key: 5,
-        url: "./images/switch.jpg",
+        url:
+          "cloud://chuyan-5g4flozv2fa0a4f5.6368-chuyan-5g4flozv2fa0a4f5-1304712061/pages/index/switch.jpg",
       },
     ],
   },
