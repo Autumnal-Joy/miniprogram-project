@@ -1,4 +1,6 @@
 // pages/home/home.js
+const { call } = require("../../utils/makePhoneCall");
+
 Page({
   /**
    * 页面的初始数据
@@ -31,29 +33,11 @@ Page({
   makePhoneCall() {
     let phoneNumber = this.data.phones[this.data.index].number;
     console.log(phoneNumber);
-    wx.makePhoneCall({
-      phoneNumber: phoneNumber,
-      success: result => {
-        console.log("success");
-      },
-      fail: () => {
-        console.log("fail(可能需要真机调试?)");
-      },
-      complete: () => {},
-    });
+    call(phoneNumber);
   },
 
   callHospital() {
-    wx.makePhoneCall({
-      phoneNumber: 120,
-      success: result => {
-        console.log("success");
-      },
-      fail: () => {
-        console.log("fail(可能需要真机调试?)");
-      },
-      complete: () => {},
-    });
+    call(120);
   },
 
   /**

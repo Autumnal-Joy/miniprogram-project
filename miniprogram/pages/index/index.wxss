@@ -3,24 +3,43 @@
   display: flex;
   flex-direction: column;
 }
-.index .top {
+.index .top .up {
+  display: flex;
+  padding: 20rpx;
+  align-items: center;
+  border-bottom: 1rpx solid black;
+}
+.index .top .up .text {
+  font-weight: bold;
+}
+.index .top .up .image {
+  margin-left: 20rpx;
+}
+.index .top .up .image image {
+  width: 80rpx;
+  transform: rotate(-30deg);
+}
+.index .top .down {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   padding: 30rpx;
   flex-grow: 0;
 }
-.index .top .image image {
+.index .top .down .image image {
   width: 125rpx;
 }
-.index .top .text {
+.index .top .down .text {
   font-size: xx-large;
 }
 .index .middle {
   flex-grow: 1;
 }
-.index .middle swiper {
+.index .middle .swiper {
   height: 100%;
+}
+.index .middle .swiper image {
+  width: 100%;
 }
 .index .bottom {
   flex-grow: 0;
@@ -29,5 +48,5 @@
   padding: 20rpx;
 }
 .index .bottom .icon image {
-  width: 200rpx;
+  width: 180rpx;
 }

@@ -1,13 +1,21 @@
 <!-- pages/index/index.wxml -->
 <view class="index">
   <view class="top">
-    <view class="image">
-      <image src="../../icons/home.png" mode="widthFix" bind:tap="onStart"></image>
+    <view class="up">
+      <view class="text">温馨提示: 可以添加到桌面方便使用</view>
+      <view class="image">
+        <image src="./icons/rightArrow.png" mode="widthFix"></image>
+      </view>
     </view>
-    <view class="text">点击左侧进入</view>
+    <view class="down">
+      <view class="image">
+        <image src="../../icons/home.png" mode="widthFix" bind:tap="onStart"></image>
+      </view>
+      <view class="text">点击左侧进入</view>
+    </view>
   </view>
   <view class="middle">
-    <swiper indicator-dots="true" autoplay="true" circular="true">
+    <swiper class="swiper" indicator-dots="true" autoplay="true" circular="true">
       <block wx:for="{{swiper_items}}" wx:key="key">
         <swiper-item>
           <image src="{{item.url}}" mode="widthFix"></image>
@@ -17,7 +25,7 @@
   </view>
   <view class="bottom">
     <view class="icon">
-      <image src="../home/icons/phone.png" mode="widthFix"></image>
+      <image src="../home/icons/phone.png" mode="widthFix" bind:tap="callHospital"></image>
     </view>
     <view class="icon">
       <image src="../home/icons/helper.png" mode="widthFix"></image>

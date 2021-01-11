@@ -1,4 +1,6 @@
 // pages/index/index.js
+const { call } = require("../../utils/makePhoneCall");
+
 Page({
   /**
    * 页面的初始数据
@@ -42,6 +44,10 @@ Page({
     wx.reLaunch({
       url: "../home/home",
     });
+  },
+
+  callHospital() {
+    call(120);
   },
 
   /**
