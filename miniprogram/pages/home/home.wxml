@@ -1,13 +1,10 @@
 <!-- pages/home/home.wxml -->
-<navigator class="" target="" url="../switch/switch" hover-class="navigator-hover" open-type="navigate">
-  switch
-</navigator>
-<view bind:tap="onGetLoc">获取位置信息</view>
+<background></background>
+<to-switch></to-switch>
 <view class="wrapper">
   <view class="call">打120</view>
   <image class="calli" src="./homep/phone.png" mode="widthFix"></image>
   <view class="helpp">呼 救</view>
   <image class="helppi" src="./homep/helper.png" mode="widthFix"></image>
-  <image class="homebg" src="../../assets/bg.png" mode="scalaToFill"></image>
   <image class="phonei" src="./homep/phonenumber.png" mode="widthFix"></image>
 </view>

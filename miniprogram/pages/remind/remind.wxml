@@ -1,2 +1,3 @@
-<!--pages/remind/remind.wxml-->
-<text>pages/remind/remind.wxml</text>
+<!-- pages/remind/remind.wxml -->
+<background></background>
+<to-switch></to-switch>

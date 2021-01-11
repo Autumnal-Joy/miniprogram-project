@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "to-switch": "../../components/toSwitch/toSwitch",
+    "background": "../../components/background/background"
+  }
 }
