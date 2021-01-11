@@ -2,7 +2,7 @@
 <background></background>
 <to-switch></to-switch>
 <view class="locate">
-  <view class="box">
+  <view class="box" bind:tap="showLocation">
     <view class="image">
       <image src="./icons/location.png" alt="定位" mode="widthFix" />
     </view>

@@ -1,9 +1,9 @@
 /* pages/home/home.wxss */
-.wrapper{
+.wrapper {
   padding: top 0;
-  padding: bottom 100%; 
+  padding: bottom 100%;
 }
-.homebg{
+.homebg {
   position: absolute;
   top: 0;
   left: 0;
@@ -11,35 +11,35 @@
   height: 100%;
   z-index: -1;
 }
-.call{
+.call {
   margin-top: 280rpx;
   text-align: center;
   font-size: 50rpx;
   font-weight: bold;
   color: brown;
 }
-.calli{
+.calli {
   position: absolute;
   top: 100rpx;
   left: 250rpx;
   width: 280rpx;
   z-index: 0;
 }
-.helpp{
+.helpp {
   margin-top: 510rpx;
   text-align: center;
   font-size: 50rpx;
   font-weight: bold;
   color: brown;
 }
-.helppi{
+.helppi {
   position: absolute;
   top: 640rpx;
   left: 225rpx;
   width: 300rpx;
   z-index: 0;
 }
-.phonei{
+.phonei {
   position: absolute;
   top: 475rpx;
   left: 20rpx;
