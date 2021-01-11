@@ -9,12 +9,19 @@
   width: 100rpx;
   z-index: 0;
 }
-input{
+.start{
   margin-top: -840rpx;
   margin-left: 110rpx;
   width: 550rpx;
-  border: 3rpx solid #000;
+  border: 2rpx solid #000;
   border-radius:15rpx; 
+}
+.tto{
+  margin-top: 45rpx;
+  margin-left: 110rpx;
+  width: 550rpx;
+  border: 2rpx solid #000;
+  border-radius:15rpx;
 }
 .rlocal{
   position: absolute;
