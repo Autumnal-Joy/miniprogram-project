@@ -17,10 +17,10 @@
   </view>
   <view class="bottom">
     <view class="icon">
-      <image src="../home/homep/phone.png" mode="widthFix"></image>
+      <image src="../home/icons/phone.png" mode="widthFix"></image>
     </view>
     <view class="icon">
-      <image src="../home/homep/helper.png" mode="widthFix"></image>
+      <image src="../home/icons/helper.png" mode="widthFix"></image>
     </view>
   </view>
 </view>
