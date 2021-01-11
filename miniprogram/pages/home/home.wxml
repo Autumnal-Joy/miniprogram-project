@@ -1,10 +1,34 @@
 <!-- pages/home/home.wxml -->
 <background></background>
-<to-switch></to-switch>
-<view class="wrapper">
-  <view class="call">打120</view>
-  <image class="calli" src="./homep/phone.png" mode="widthFix" bind:tap="callHospital"></image>
-  <view class="helpp">呼 救</view>
-  <image class="helppi" src="./homep/helper.png" mode="widthFix"></image>
-  <image class="phonei" src="./homep/phonenumber.png" mode="widthFix"></image>
+<view class="switch">
+  <to-switch></to-switch>
+  <view class="text">语言切换</view>
+</view>
+<view class="home">
+  <view class="top-bottom">
+    <view class="wrap">
+      <view class="image">
+        <image src="./icons/phone.png" mode="widthFix"></image>
+      </view>
+      <view class="text">打120</view>
+    </view>
+  </view>
+  <view class="middle">
+    <view class="left">
+      <image src="./icons/phonenumber.png" mode="widthFix" bind:tap="makePhoneCall"></image>
+    </view>
+    <view class="right">
+      <picker class="picker" bindchange="onPickerChange" value="{{index}}" range="{{phones}}" range-key="number">
+        <view class="phone">{{phones[index].number}}</view>
+      </picker>
+    </view>
+  </view>
+  <view class="top-bottom">
+    <view class="wrap">
+      <view class="image">
+        <image src="./icons/helper.png" mode="widthFix"></image>
+      </view>
+      <view class="text">呼 救</view>
+    </view>
+  </view>
 </view>

@@ -13,27 +13,27 @@ Component({
     images: [
       {
         key: 0,
-        src: "../../assets/info.png",
+        src: "../../icons/info.png",
         url: "../../pages/info/info",
       },
       {
         key: 1,
-        src: "../../assets/remind.png",
+        src: "../../icons/remind.png",
         url: "../../pages/remind/remind",
       },
       {
         key: 2,
-        src: "../../assets/home.png",
+        src: "../../icons/home.png",
         url: "../../pages/home/home",
       },
       {
         key: 3,
-        src: "../../assets/locate.png",
+        src: "../../icons/locate.png",
         url: "../../pages/locate/locate",
       },
       {
         key: 4,
-        src: "../../assets/route.png",
+        src: "../../icons/route.png",
         url: "../../pages/route/route",
       },
     ],

@@ -3,12 +3,50 @@ Page({
   /**
    * 页面的初始数据
    */
-  data: {},
+  data: {
+    index: 0,
+    phones: [
+      {
+        key: 0,
+        number: 120,
+      },
+      {
+        key: 1,
+        number: 110,
+      },
+      {
+        key: 2,
+        number: 10086,
+      },
+    ],
+  },
+
+  onPickerChange(event) {
+    console.log(event.detail.value);
+    this.setData({
+      index: event.detail.value,
+    });
+  },
+
+  makePhoneCall() {
+    let phoneNumber = this.data.phones[this.data.index].number;
+    console.log(phoneNumber);
+    wx.makePhoneCall({
+      phoneNumber: phoneNumber,
+      success: result => {
+        console.log("success");
+      },
+      fail: () => {
+        console.log("fail(可能需要真机调试?)");
+      },
+      complete: () => {},
+    });
+  },
 
   callHospital() {
     wx.makePhoneCall({
       phoneNumber: 120,
-      success: (result) => {
+      success: result => {
         console.log("success");
       },
       fail: () => {

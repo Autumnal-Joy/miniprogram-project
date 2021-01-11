@@ -18,27 +18,33 @@
   "sitemapLocation": "sitemap.json",
   "style": "v2",
   "tabBar": {
-    "list": [{
-      "pagePath": "pages/info/info",
-      "iconPath": "./assets/info.png",
-      "selectedIconPath": "./assets/info_s.png"
-    },{
-      "pagePath": "pages/remind/remind",
-      "iconPath": "./assets/remind.png",
-      "selectedIconPath": "./assets/remind_s.png"
-    },{
-      "pagePath": "pages/home/home",
-      "iconPath": "./assets/home.png",
-      "selectedIconPath": "./assets/home_s.png"
-    },{
-      "pagePath": "pages/locate/locate",
-      "iconPath": "./assets/locate.png",
-      "selectedIconPath": "./assets/locate_s.png"
-    },{
-      "pagePath": "pages/route/route",
-      "iconPath": "./assets/route.png",
-      "selectedIconPath": "./assets/route_s.png"
-    }]
+    "list": [
+      {
+        "pagePath": "pages/info/info",
+        "iconPath": "./icons/info.png",
+        "selectedIconPath": "./icons/info_s.png"
+      },
+      {
+        "pagePath": "pages/remind/remind",
+        "iconPath": "./icons/remind.png",
+        "selectedIconPath": "./icons/remind_s.png"
+      },
+      {
+        "pagePath": "pages/home/home",
+        "iconPath": "./icons/home.png",
+        "selectedIconPath": "./icons/home_s.png"
+      },
+      {
+        "pagePath": "pages/locate/locate",
+        "iconPath": "./icons/locate.png",
+        "selectedIconPath": "./icons/locate_s.png"
+      },
+      {
+        "pagePath": "pages/route/route",
+        "iconPath": "./icons/route.png",
+        "selectedIconPath": "./icons/route_s.png"
+      }
+    ]
   },
   "permission": {
     "scope.userLocation": {
