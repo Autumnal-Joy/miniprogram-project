@@ -1,1 +1,62 @@
-/* pages/info/info.wxss */
+.info {
+  display: flex;
+  flex-direction: column;
+  font-size: large;
+}
+.info .up {
+  display: flex;
+  justify-content: space-between;
+}
+.info .up .update .button {
+  margin: 5rpx 5rpx 0 0;
+  padding: 20rpx 50rpx;
+  background-color: #5677fc;
+  color: #fff;
+  font-size: large;
+  box-shadow: 0rpx 20rpx 25rpx -15rpx #000;
+}
+.info .down {
+  display: flex;
+  flex-direction: column;
+  padding: 30rpx 80rpx;
+}
+.info .down .figure {
+  display: flex;
+  align-items: center;
+}
+.info .down .figure .side {
+  flex-grow: 0;
+  width: 150rpx;
+}
+.info .down .figure .side image {
+  width: 100rpx;
+  display: block;
+  margin: auto;
+}
+.info .down .figure .middle {
+  flex-grow: 1;
+}
+.info .down .figure .middle .name {
+  text-align: center;
+  border: 3rpx solid black;
+  padding: 12rpx;
+}
+.info .down .text {
+  display: flex;
+  align-items: center;
+  padding: 10rpx;
+}
+.info .down .text text {
+  font-size: x-large;
+  margin-left: 20rpx;
+  border: 1rpx solid black;
+  padding: 0 20rpx;
+}
+.info .down .text-box {
+  border: 3rpx solid black;
+  padding: 10rpx;
+  min-height: 50rpx;
+}
+.info .down .text-box .item {
+  padding: 5rpx;
+}

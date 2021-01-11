@@ -1,3 +1,35 @@
 <!-- pages/info/info.wxml -->
 <background></background>
-<to-switch></to-switch>
+<view class="info">
+  <view class="up">
+    <to-switch></to-switch>
+    <view class="update">
+      <view class="button">更新基本信息</view>
+    </view>
+  </view>
+  <view class="down">
+    <view class="figure">
+      <view class="side">
+        <image src="./icons/user.png" mode="widthFix"></image>
+      </view>
+      <view class="middle">
+        <view class="name">张三</view>
+      </view>
+      <view class="side"></view>
+    </view>
+    <view class="text">
+      年龄:
+      <text>65</text>
+    </view>
+    <view class="text">紧急联系人电话:</view>
+    <view class="text-box">
+      <view class="item">119</view>
+      <view class="item">110</view>
+      <view class="item">120</view>
+    </view>
+    <view class="text">家庭住址:</view>
+    <view class="text-box">上海市</view>
+    <view class="text">既往病史:</view>
+    <view class="text-box"></view>
+  </view>
+</view>
