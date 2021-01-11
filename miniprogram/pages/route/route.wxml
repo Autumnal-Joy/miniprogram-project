@@ -18,13 +18,9 @@
   <view class="talk">按住说话</view>
   <image class="talki" src="./icons/话筒.png" mode="widthFix"></image>
 </view>
-<view class="page-body">
-  <view class="page-section">
-    <view class="weui-cells__title"></view>
-    <view class="weui-cells weui-cells_after-title">
-      <view class="weui-cell weui-cell_input">
-        <input class="weui-input" auto-focus placeholder="出发地" />
-      </view>
-    </view>
-  </view>
+<view class="start">
+<input auto-focus placeholder="出发地" />
+</view>
+<view class="tto">
+<input  auto-focus placeholder="目的地" />
 </view>
