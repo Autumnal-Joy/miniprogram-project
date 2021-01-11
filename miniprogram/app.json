@@ -3,6 +3,7 @@
     "pages/index/index",
     "pages/home/home",
     "pages/info/info",
+    "pages/info/input/input",
     "pages/remind/remind",
     "pages/locate/locate",
     "pages/route/route",

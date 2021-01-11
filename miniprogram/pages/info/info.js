@@ -1,10 +1,29 @@
 // pages/info/info.js
+const DB = wx.cloud.database().collection("people_info");
+
 Page({
   /**
    * 页面的初始数据
    */
-  data: {},
+  data: {
+    name: "",
+    birthday: 0,
+    home: "",
+    medicalHistory: [],
+    emergencyCall: [],
+  },
 
+  getPeopleInfo() {
+    DB.get({
+      success(res) {
+        console.log(res);
+      },
+      fail(res) {
+        console.log(res);
+      },
+      complete(res) {},
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */
