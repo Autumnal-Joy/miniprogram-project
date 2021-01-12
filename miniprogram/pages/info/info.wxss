@@ -15,31 +15,15 @@
   font-size: large;
   box-shadow: 0rpx 20rpx 25rpx -15rpx #000;
 }
-.info .down {
-  display: flex;
-  flex-direction: column;
-  padding: 30rpx 80rpx;
-}
-.info .down .figure {
-  display: flex;
-  align-items: center;
-}
-.info .down .figure .side {
-  flex-grow: 0;
-  width: 150rpx;
-}
-.info .down .figure .side image {
+.info .image image {
   width: 100rpx;
   display: block;
   margin: auto;
 }
-.info .down .figure .middle {
-  flex-grow: 1;
-}
-.info .down .figure .middle .name {
-  text-align: center;
-  border: 3rpx solid black;
-  padding: 12rpx;
+.info .down {
+  display: flex;
+  flex-direction: column;
+  padding: 30rpx 80rpx;
 }
 .info .down .text {
   display: flex;
@@ -59,4 +43,11 @@
 }
 .info .down .text-box .item {
   padding: 5rpx;
+}
+.info .down .row {
+  display: flex;
+  margin-top: 10rpx;
+}
+.info .down .row .text-box {
+  flex-grow: 1;
 }

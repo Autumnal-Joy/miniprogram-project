@@ -1,5 +1,5 @@
 // pages/index/index.js
-const { call } = require("../../utils/makePhoneCall");
+const apiTools = require("../../utils/apiTools");
 
 Page({
   /**
@@ -47,7 +47,7 @@ Page({
   },
 
   callHospital() {
-    call(120);
+    apiTools.call(120);
   },
 
   /**

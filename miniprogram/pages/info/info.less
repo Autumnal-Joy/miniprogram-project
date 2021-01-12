@@ -16,31 +16,17 @@
       }
     }
   }
+  .image {
+    image {
+      width: 100rpx;
+      display: block;
+      margin: auto;
+    }
+  }
   .down {
     display: flex;
     flex-direction: column;
     padding: 30rpx 80rpx;
-    .figure {
-      display: flex;
-      align-items: center;
-      .side {
-        flex-grow: 0;
-        width: 150rpx;
-        image {
-          width: 100rpx;
-          display: block;
-          margin: auto;
-        }
-      }
-      .middle {
-        flex-grow: 1;
-        .name {
-          text-align: center;
-          border: 3rpx solid black;
-          padding: 12rpx;
-        }
-      }
-    }
     .text {
       display: flex;
       align-items: center;
@@ -58,6 +44,13 @@
       min-height: 50rpx;
       .item {
         padding: 5rpx;
+      }
+    }
+    .row {
+      display: flex;
+      margin-top: 10rpx;
+      .text-box {
+        flex-grow: 1;
       }
     }
   }

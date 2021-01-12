@@ -1,5 +1,5 @@
 // pages/home/home.js
-const { call } = require("../../utils/makePhoneCall");
+const apiTools = require("../../utils/apiTools");
 
 Page({
   /**
@@ -33,11 +33,11 @@ Page({
   makePhoneCall() {
     let phoneNumber = this.data.phones[this.data.index].number;
     console.log(phoneNumber);
-    call(phoneNumber);
+    apiToolsc.call(phoneNumber);
   },
 
   callHospital() {
-    call(120);
+    apiTools.call(120);
   },
 
   /**

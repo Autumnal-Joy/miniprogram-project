@@ -1,5 +1,4 @@
 // pages/info/info.js
-const DB = wx.cloud.database().collection("people_info");
 
 Page({
   /**
@@ -7,23 +6,14 @@ Page({
    */
   data: {
     name: "",
-    birthday: 0,
+    birthday: "1900-01-01",
+    startday: "1900-01-01",
+    today: "2021-01-11",
     home: "",
     medicalHistory: [],
     emergencyCall: [],
   },
 
-  getPeopleInfo() {
-    DB.get({
-      success(res) {
-        console.log(res);
-      },
-      fail(res) {
-        console.log(res);
-      },
-      complete(res) {},
-    });
-  },
   /**
    * 生命周期函数--监听页面加载
    */
