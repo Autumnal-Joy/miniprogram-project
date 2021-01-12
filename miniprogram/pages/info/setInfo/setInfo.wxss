@@ -6,7 +6,7 @@
 .set-info .text {
   margin-top: 20rpx;
   padding: 10rpx 0;
-  font-weight:bold;
+  font-weight: bold;
 }
 .set-info .input {
   display: flex;
