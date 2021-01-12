@@ -1,0 +1,6 @@
+<!--miniprogram/pages/route/walk/walk.wxml-->
+<text>miniprogram/pages/route/walk/walk.wxml</text>
+<view>
+  <image class="walkhow" src="/pages/route/icons/walkhow.jpg" mode="widthFix"></image>
+</view>
+<button size="mini" bindtap="go2">返回</button>

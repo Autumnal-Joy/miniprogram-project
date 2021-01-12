@@ -1,0 +1,19 @@
+/* miniprogram/pages/route/walk/walk.wxss */
+.walkhow{
+  position: absolute;
+  top: 0;
+  left: 1px;
+  width: 99%;
+  z-index: 0;
+}
+button{
+  line-height: 30px !important;
+  font-weight: lighter !important;
+  font-family: fantasy !important;
+  height: 75rpx;
+  color: #161515;
+  border: 7rpx solid #0e0d0d;
+  top: 1200rpx;
+  left: -280rpx;
+  background-color: rgb(245, 241, 204);
+}

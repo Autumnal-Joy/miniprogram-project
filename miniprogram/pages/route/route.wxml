@@ -4,17 +4,11 @@
 <view class="routewrapper">
   <image class="glocal" src="./icons/位置.png" mode="widthFix"></image>
   <image class="rlocal" src="./icons/redl.png" mode="widthFix"></image>
-  <image class="busi" src="./icons/公交.png" mode="widthFix"></image>
   <view class="bus"> 公交地铁</view>
-  <image class="busi" src="./icons/公交.png" mode="widthFix"></image>
   <view class="keche">客车</view>
-  <image class="kechei" src="./icons/客车.png" mode="widthFix"></image>
   <view class="taxi">打车</view>
-  <image class="taxii" src="./icons/打车.png" mode="widthFix"></image>
   <view class="train">火车</view>
-  <image class="traini" src="./icons/火车.png" mode="widthFix"></image>
   <view class="walk"> 步行</view>
-  <image class="walki" src="./icons/步行.png" mode="widthFix"></image>
   <view class="talk">按住说话</view>
   <image class="talki" src="./icons/话筒.png" mode="widthFix"></image>
 </view>
@@ -24,3 +18,18 @@
 <view class="tto">
 <input  auto-focus placeholder="目的地" />
 </view>
+<navigator target="busn" url="../../pages/route/bus/bus" open-type="navigate">
+  <image class="busi" src="./icons/公交.png" mode="widthFix"></image>
+  </navigator>
+  <navigator target="kechen" url="../../pages/route/keche/keche" open-type="navigate">
+  <image class="kechei" src="./icons/客车.png" mode="widthFix"></image>
+  </navigator>
+  <navigator target="taxin" url="../../pages/route/taxi/taxi" open-type="navigate">
+  <image class="taxii" src="./icons/打车.png" mode="widthFix"></image>
+  </navigator>
+  <navigator target="trainn" url="../../pages/route/train/train" open-type="navigate">
+  <image class="traini" src="./icons/火车.png" mode="widthFix"></image>
+  </navigator>
+  <navigator target="walkn" url="../../pages/route/walk/walk" open-type="navigate">
+  <image class="walki" src="./icons/步行.png" mode="widthFix"></image>
+  </navigator>

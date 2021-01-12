@@ -1,0 +1,7 @@
+<!--miniprogram/pages/route/bus/bus.wxml-->
+<text>miniprogram/pages/route/bus/bus.wxml</text>
+<view>
+  <image class="bushow" src="/pages/route/icons/underway.jpg" mode="widthFix"></image>
+</view>
+
+  <button size="mini"  bindtap="go2" >返回</button>

@@ -7,7 +7,12 @@
     "pages/remind/remind",
     "pages/locate/locate",
     "pages/route/route",
-    "pages/switch/switch"
+    "pages/switch/switch",
+    "pages/route/bus/bus",
+    "pages/route/keche/keche",
+    "pages/route/taxi/taxi",
+    "pages/route/train/train",
+    "pages/route/walk/walk"
   ],
   "window": {
     "navigationBarBackgroundColor": "#000000",
