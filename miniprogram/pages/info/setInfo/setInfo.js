@@ -5,13 +5,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-    name: "",
-    birthday: "1900-01-01",
-    startday: "1900-01-01",
-    today: "2021-01-11",
-    home: "",
-    medicalHistory: [],
-    emergencyCall: [],
+    person: {
+      name: "",
+      birthday: "1900-01-01",
+      home: "",
+      medicalHistory: [],
+      emergencyCall: [],
+    },
+    picker: {
+      startday: "1900-01-01",
+      today: "2021-01-11",
+    },
   },
 
   /**

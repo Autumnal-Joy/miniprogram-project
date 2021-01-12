@@ -7,14 +7,15 @@ App({
     });
 
     this.globalData = {
-      city: "",
+      person_info: {},
+      openid: null,
     };
 
     wx.getStorage({
       key: "city",
       success: result => {
         console.log("获取本地缓存 city: " + result.data);
-        this.globalData.city = result.data;
+        this.globalData.person_info.city = result.data;
       },
       fail: () => {},
       complete: () => {},

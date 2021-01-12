@@ -32,12 +32,15 @@ Page({
 
   makePhoneCall() {
     let phoneNumber = this.data.phones[this.data.index].number;
-    console.log(phoneNumber);
-    apiToolsc.call(phoneNumber);
+    apiTools.call(phoneNumber.toString()).catch(err => {
+      console.log(err);
+    });
   },
 
   callHospital() {
-    apiTools.call(120);
+    apiTools.call("120").catch(err => {
+      console.log(err);
+    });
   },
 
   /**

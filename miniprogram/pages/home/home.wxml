@@ -8,7 +8,7 @@
   <view class="top-bottom">
     <view class="wrap">
       <view class="image">
-        <image src="./icons/phone.png" mode="widthFix"></image>
+        <image src="./icons/phone.png" mode="widthFix" bind:tap="callHospital"></image>
       </view>
       <view class="text">打120</view>
     </view>

@@ -1,23 +1,49 @@
 // pages/info/info.js
+var app = getApp();
 
 Page({
   /**
    * 页面的初始数据
    */
   data: {
-    name: "",
-    birthday: "1900-01-01",
-    startday: "1900-01-01",
-    today: "2021-01-11",
-    home: "",
-    medicalHistory: [],
-    emergencyCall: [],
+    person_info: null,
+    avatarUrl: "./icons/user.png",
+    userInfo: [],
+  },
+
+  onGetUserInfo: function (e) {
+    if (!this.data.logged && e.detail.userInfo) {
+      this.setData({
+        logged: true,
+        avatarUrl: e.detail.userInfo.avatarUrl,
+        userInfo: e.detail.userInfo,
+      });
+    }
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {},
+  onLoad: function (options) {
+    // 获取用户信息
+    wx.getSetting({
+      success: res => {
+        if (res.authSetting["scope.userInfo"]) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+          wx.getUserInfo({
+            success: res => {
+              this.setData({
+                avatarUrl: res.userInfo.avatarUrl,
+                userInfo: res.userInfo,
+              });
+            },
+          });
+        }
+      },
+    });
+
+    this.data.person_info = { ...app.globalData.person_info };
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

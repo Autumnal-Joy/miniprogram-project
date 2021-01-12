@@ -12,9 +12,6 @@
 .index .top .up .text {
   font-weight: bold;
 }
-.index .top .up .image {
-  margin-left: 20rpx;
-}
 .index .top .up .image image {
   width: 80rpx;
   transform: rotate(-30deg);
@@ -26,7 +23,11 @@
   padding: 30rpx;
   flex-grow: 0;
 }
-.index .top .down .image image {
+.index .top .down .image button {
+  padding: 0;
+  width: 125rpx;
+}
+.index .top .down .image button image {
   width: 125rpx;
 }
 .index .top .down .text {
