@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    person_info: null,
+    person_info: {},
     avatarUrl: "./icons/user.png",
     userInfo: [],
   },

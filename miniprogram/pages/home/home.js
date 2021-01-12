@@ -24,7 +24,6 @@ Page({
   },
 
   onPickerChange(event) {
-    console.log(event.detail.value);
     this.setData({
       index: event.detail.value,
     });
