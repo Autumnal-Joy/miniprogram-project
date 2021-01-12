@@ -1,5 +1,5 @@
 // pages/switch/switch.js
-var app = getApp();
+const app = getApp();
 
 Page({
   /**
@@ -242,8 +242,7 @@ Page({
   changeLanguage(event) {
     this.changeState();
     let city = event.target.dataset.city;
-
-    app.globalData.city = city;
+    app.globalData.person_info.city = city;
     this.setData({
       city,
     });
@@ -251,8 +250,8 @@ Page({
     wx.setStorage({
       key: "city",
       data: city,
-      success: result => {
-        console.log("设置本地缓存 city: " + city);
+      success: res => {
+        console.log(res);
       },
       fail: () => {},
       complete: () => {},
@@ -275,9 +274,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let city = app.globalData.person_info.city || "";
     this.setData({
       unset: true,
-      city: app.globalData.city,
+      city,
     });
   },
 

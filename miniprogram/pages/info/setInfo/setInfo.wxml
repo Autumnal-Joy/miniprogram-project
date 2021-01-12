@@ -8,7 +8,7 @@
     </view>
     <view class="text">请选择老人的出生年月</view>
     <view class="input">
-      <picker mode="date" value="{{birthday}}" start="{{startday}}" end="{{today}}" bindchange="">
+      <picker mode="date" value="{{birthday}}" start="{{picker.startday}}" end="{{picker.today}}" bindchange="">
         <view class="picker">{{birthday}}</view>
       </picker>
     </view>

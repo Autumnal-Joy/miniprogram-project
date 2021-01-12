@@ -9,7 +9,9 @@
     </view>
     <view class="down">
       <view class="image">
-        <image src="../../icons/home.png" mode="widthFix" bind:tap="onStart"></image>
+        <button open-type="getUserInfo" bind:tap="onStart">
+          <image src="../../icons/home.png" mode="widthFix"></image>
+        </button>
       </view>
       <view class="text">点击左侧进入</view>
     </view>

@@ -15,10 +15,15 @@
   font-size: large;
   box-shadow: 0rpx 20rpx 25rpx -15rpx #000;
 }
-.info .image image {
+.info .image button {
   width: 100rpx;
-  display: block;
+  height: 100rpx;
   margin: auto;
+  padding: 0;
+  border-radius: 50%;
+}
+.info .image button image {
+  width: 100rpx;
 }
 .info .down {
   display: flex;
