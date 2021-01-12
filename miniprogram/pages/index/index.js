@@ -10,32 +10,32 @@ Page({
       {
         key: 0,
         url:
-          "cloud://chuyan-5g4flozv2fa0a4f5.6368-chuyan-5g4flozv2fa0a4f5-1304712061/pages/index/people.png",
+          "cloud://chuyan-5g4flozv2fa0a4f5.6368-chuyan-5g4flozv2fa0a4f5-1304712061/pages/index/images/people.png",
       },
       {
         key: 1,
         url:
-          "cloud://chuyan-5g4flozv2fa0a4f5.6368-chuyan-5g4flozv2fa0a4f5-1304712061/pages/index/helper.jpg",
+          "cloud://chuyan-5g4flozv2fa0a4f5.6368-chuyan-5g4flozv2fa0a4f5-1304712061/pages/index/images/helper.jpg",
       },
       {
         key: 2,
         url:
-          "cloud://chuyan-5g4flozv2fa0a4f5.6368-chuyan-5g4flozv2fa0a4f5-1304712061/pages/index/info.jpg",
+          "cloud://chuyan-5g4flozv2fa0a4f5.6368-chuyan-5g4flozv2fa0a4f5-1304712061/pages/index/images/info.jpg",
       },
       {
         key: 3,
         url:
-          "cloud://chuyan-5g4flozv2fa0a4f5.6368-chuyan-5g4flozv2fa0a4f5-1304712061/pages/index/locate.jpg",
+          "cloud://chuyan-5g4flozv2fa0a4f5.6368-chuyan-5g4flozv2fa0a4f5-1304712061/pages/index/images/locate.jpg",
       },
       {
         key: 4,
         url:
-          "cloud://chuyan-5g4flozv2fa0a4f5.6368-chuyan-5g4flozv2fa0a4f5-1304712061/pages/index/remind.jpg",
+          "cloud://chuyan-5g4flozv2fa0a4f5.6368-chuyan-5g4flozv2fa0a4f5-1304712061/pages/index/images/remind.jpg",
       },
       {
         key: 5,
         url:
-          "cloud://chuyan-5g4flozv2fa0a4f5.6368-chuyan-5g4flozv2fa0a4f5-1304712061/pages/index/switch.jpg",
+          "cloud://chuyan-5g4flozv2fa0a4f5.6368-chuyan-5g4flozv2fa0a4f5-1304712061/pages/index/images/switch.jpg",
       },
     ],
   },
