@@ -1,13 +1,16 @@
 .set-info {
   display: flex;
   flex-direction: column;
-  padding: 20rpx 50rpx;
+  margin: 20rpx 50rpx;
   .text {
     margin-top: 20rpx;
     padding: 10rpx 0;
   }
   .input {
+    display: flex;
+    align-items: center;
     input {
+      flex-grow: 1;
       border: 1rpx solid black;
       width: max;
       padding: 10rpx;
@@ -18,19 +21,38 @@
       padding: 10rpx;
       background-color: #fff;
     }
-  }
-  .button {
-    margin-top: 10rpx;
-    .add {
+    .btn {
       font-size: x-large;
       height: 40rpx;
       width: 40rpx;
       padding: 10rpx;
       text-align: center;
       line-height: 40rpx;
-      background-color: #1ba160;
       color: white;
-      border-radius: 5rpx;
+      border-radius: 50%;
+    }
+    .sub {
+      background-color: #d81e06;
+      margin-left: 10rpx;
+    }
+    .add {
+      background-color: #5677fc;
+    }
+  }
+  .middle {
+    .input {
+      margin-top: 20rpx;
+    }
+  }
+  .down {
+    .submit {
+      margin: auto;
+      background-color: #5677fc;
+      color: white;
+      padding: 20rpx;
+      width: 150rpx;
+      text-align: center;
+      border-radius: 10rpx;
     }
   }
 }
