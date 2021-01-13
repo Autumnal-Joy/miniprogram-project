@@ -7,37 +7,23 @@ App({
     });
 
     this.globalData = {
-      openid: null,
-      person_info_id: null,
-      promises: [],
-      login: () => {
-        return wx.cloud
-          .callFunction({
+      _openid: null,
+      login: async () => {
+        let _openid = this.globalData._openid;
+        if (_openid) {
+          return _openid;
+        } else {
+          let {
+            result: { _openid },
+          } = await wx.cloud.callFunction({
             name: "login",
             data: {},
-          })
-          .then(res => {
-            this.globalData.openid = res.result.openid;
-            return res.result.openid;
-          })
-          .then(res => {
-            const DB = wx.cloud.database({
-              env: "chuyan-5g4flozv2fa0a4f5",
-            });
-            return DB.collection("person_info")
-              .where({
-                _openid: res,
-              })
-              .get();
-          })
-          .then(res => {
-            if (res.length) {
-              this.globalData.person_info_id = res._id;
-            }
-          })
-          .catch(console.log);
+          });
+          this.globalData._openid = _openid;
+          console.log("获取用户openid", _openid);
+          return _openid;
+        }
       },
     };
-    this.globalData.login();
   },
 });
