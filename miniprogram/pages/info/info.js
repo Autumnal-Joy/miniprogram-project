@@ -58,7 +58,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: async function () {
-    console.group("info.onLoad");
+    console.group("info.onShow");
     try {
       var { data: person_info } = await wx.getStorage({
         key: "person_info",
