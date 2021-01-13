@@ -8,7 +8,7 @@ Page({
   data: {
     mask: false,
     city: "",
-    unset: false,
+    unset: true,
     region: [
       {
         key: 0,
@@ -239,23 +239,64 @@ Page({
     ],
   },
 
-  changeLanguage(event) {
+  async changeLanguage(event) {
     this.changeState();
     let city = event.target.dataset.city;
-    app.globalData.person_info.city = city;
     this.setData({
       city,
     });
 
-    wx.setStorage({
-      key: "city",
-      data: city,
-      success: res => {
-        console.log(res);
-      },
-      fail: () => {},
-      complete: () => {},
-    });
+    wx.getStorage({
+      key: "person_info",
+    })
+      .catch(err => {
+        wx.setStorage({
+          key: "prson_info",
+          data: JSON.stringify({ city }),
+        });
+      })
+      .then(res => {
+        // 获取缓存信息, 修改城市
+        let person_info = JSON.parse(res.data);
+        person_info.city = city;
+        return person_info;
+      })
+      .then(res => {
+        // 将结果重新保存至缓存
+        wx.setStorage({
+          key: "prson_info",
+          data: JSON.stringify(res),
+        });
+        return res;
+      })
+      .then(res => {
+        // 将信息上传到数据库
+        let _id = app.globalData._id;
+        const DB = wx.cloud.database({
+          env: "chuyan-5g4flozv2fa0a4f5",
+        });
+        if (_id) {
+          return DB.collection("person_info")
+            .doc(_id)
+            .update({
+              data: {
+                city: res.city,
+              },
+            });
+        } else {
+          // 数据库中无记录, 则新建记录
+          return DB.collection("person_info")
+            .add({
+              data: {
+                city: res.city,
+              },
+            })
+            .then(res => {
+              app.globalData._id = res._id;
+            });
+        }
+      })
+      .catch(console.log);
   },
 
   changeMask() {
@@ -274,11 +315,21 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let city = app.globalData.person_info.city || "";
-    this.setData({
-      unset: true,
-      city,
-    });
+    wx.getStorage({
+      key: "person_info",
+    })
+      .then(res => {
+        // 从缓存中获取信息
+        let person_info = JSON.parse(res.data);
+        return person_info.city;
+      })
+      .then(res => {
+        // 保存至页面数据
+        this.setData({
+          city: res,
+        });
+      })
+      .catch(console.log);
   },
 
   /**

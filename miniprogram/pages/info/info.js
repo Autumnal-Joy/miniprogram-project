@@ -1,5 +1,5 @@
 // pages/info/info.js
-var app = getApp();
+const app = getApp();
 
 Page({
   /**
@@ -42,7 +42,43 @@ Page({
       },
     });
 
-    this.data.person_info = { ...app.globalData.person_info };
+    wx.getStorage({
+      key: "person_info",
+    })
+      .then(res => {
+        console.log(res);
+        if (res.data) {
+          return res.data;
+        } else {
+          throw res.data;
+        }
+      })
+      .catch(err => {
+        console.log(err);
+        let _id = app.globalData._id;
+        if (_id) {
+          const DB = wx.cloud.database({
+            env: "chuyan-5g4flozv2fa0a4f5",
+          });
+          return DB.collection("person_info")
+            .doc(_id)
+            .get()
+            .then(res => {
+              return wx.setStorage({
+                key: "person_info",
+                data: JSON.stringify(res),
+              });
+            });
+        } else {
+          throw "_id not found";
+        }
+      })
+      .then(res => {
+        this.setData({
+          person_info: JSON.parse(res),
+        });
+      })
+      .catch(console.log);
   },
 
   /**

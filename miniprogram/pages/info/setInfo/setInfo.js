@@ -1,5 +1,6 @@
 // pages/info/input/input.js
 const tools = require("../../../utils/tools");
+const app = getApp();
 
 Page({
   /**
@@ -66,7 +67,50 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {},
+  onLoad: function (options) {
+    wx.getStorage({
+      key: "person_info",
+    })
+      .then(res => {
+        // 从缓存中获取信息
+        console.log(res);
+        if (res.data) {
+          return res.data;
+        } else {
+          throw res.data;
+        }
+      })
+      .catch(err => {
+        // 缓存获取失败, 从数据库中获取信息
+        console.log(err);
+        let _id = app.globalData._id;
+        if (_id) {
+          const DB = wx.cloud.database({
+            env: "chuyan-5g4flozv2fa0a4f5",
+          });
+          return DB.collection("person_info")
+            .doc(_id)
+            .get()
+            .then(res => {
+              // 将信息保存至缓存
+              return wx.setStorage({
+                key: "person_info",
+                data: JSON.stringify(res),
+              });
+            });
+        } else {
+          // 数据库中无记录
+          throw "_id not found";
+        }
+      })
+      .then(res => {
+        // 保存至页面数据
+        this.setData({
+          person_info: JSON.parse(res),
+        });
+      })
+      .catch(console.log);
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
