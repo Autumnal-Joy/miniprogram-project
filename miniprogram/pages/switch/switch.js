@@ -318,7 +318,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: async function (options) {
-    console.group("switch.onload");
+    console.group("switch.onLoad");
     try {
       var { data: person_info } = await wx.getStorage({
         key: "person_info",

@@ -4,7 +4,7 @@
   <view class="up">
     <view class="text">姓名</view>
     <view class="input">
-      <input bindinput="onInputChange" data-type="name" type="text" placeholder="例如: 张三" value="{{person_info.name}}"></input>
+      <input bindchange="onInputChange" data-type="name" type="text" placeholder="例如: 张三" value="{{person_info.name}}"></input>
     </view>
     <view class="text">请选择老人的出生年月</view>
     <view class="input">
@@ -14,13 +14,13 @@
     </view>
     <view class="text">具体家庭住址</view>
     <view class="input">
-      <input bindinput="onInputChange" data-type="home" type="text" placeholder=" " value="{{person_info.home}}"></input>
+      <input bindchange="onInputChange" data-type="home" type="text" placeholder=" " value="{{person_info.home}}"></input>
     </view>
   </view>
   <view class="middle">
     <view class="text">既往病史</view>
     <view class="input" wx:for="{{person_info.medicalHistory}}" wx:key="*this">
-      <input bindinput="onInputChange" data-type="medicalHistory" data-index="{{index}}" type="text" placeholder="" value="{{item}}"></input>
+      <input bindchange="onInputChange" data-type="medicalHistory" data-index="{{index}}" type="text" placeholder="" value="{{item}}"></input>
       <view class="btn sub" data-index="{{index}}" data-type="medicalHistory" bind:tap="sub" wx:if="{{person_info.medicalHistory.length > 1}}">
         -
       </view>
@@ -30,7 +30,7 @@
     </view>
     <view class="text">紧急联系人电话</view>
     <view class="input" wx:for="{{person_info.emergencyCall}}" wx:key="*this">
-      <input bindinput="onInputChange" data-type="emergencyCall" data-index="{{index}}" type="text" placeholder="（请注意确认输入的电话是否正确）" value="{{item}}"></input>
+      <input bindchange="onInputChange" data-type="emergencyCall" data-index="{{index}}" type="text" placeholder="（请注意确认输入的电话是否正确）" value="{{item}}"></input>
       <view class="btn sub" data-index="{{index}}" data-type="emergencyCall" bind:tap="sub" wx:if="{{person_info.emergencyCall.length > 1}}">
         -
       </view>
@@ -40,6 +40,6 @@
     </view>
   </view>
   <view class="down">
-    <view class="submit">确 认</view>
+    <view class="submit" bind:tap="onUpdate">确 认</view>
   </view>
 </view>
