@@ -104,12 +104,12 @@ Page({
         console.log("读取云数据库", list.data);
         if (list.data.length) {
           let res = await collection.doc(list.data[0]._id).set({
-            data: { ...person_info },
+            data: { ...person_info, _openid: undefined, _id: undefined },
           });
           console.log("更新云数据库", res);
         } else {
           let res = await collection.add({
-            data: { ...person_info },
+            data: { ...person_info, _openid: undefined, _id: undefined },
           });
           console.log("创建云数据库记录", res);
         }
