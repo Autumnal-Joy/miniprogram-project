@@ -11,227 +11,212 @@ Page({
     unset: true,
     region: [
       {
-        key: 0,
         firstWord: "A",
         cities: [
           {
-            key: 0,
+            abbr: "AH",
             name: "安徽",
           },
           {
-            key: 1,
+            abbr: "MO",
             name: "澳门",
           },
         ],
       },
       {
-        key: 1,
         firstWord: "B",
         cities: [
           {
-            key: 0,
+            abbr: "BJ",
             name: "北京",
           },
         ],
       },
       {
-        key: 2,
         firstWord: "C",
         cities: [
           {
-            key: 0,
+            abbr: "CQ",
             name: "重庆",
           },
         ],
       },
       {
-        key: 3,
         firstWord: "F",
         cities: [
           {
-            key: 0,
+            abbr: "FJ",
             name: "福建",
           },
         ],
       },
       {
-        key: 4,
         firstWord: "G",
         cities: [
           {
-            key: 0,
+            abbr: "GS",
             name: "甘肃",
           },
           {
-            key: 1,
+            abbr: "GD",
             name: "广东",
           },
           {
-            key: 2,
+            abbr: "GX",
             name: "广西",
           },
           {
-            key: 3,
+            abbr: "GZ",
             name: "贵州",
           },
         ],
       },
       {
-        key: 5,
         firstWord: "H",
         cities: [
           {
-            key: 0,
+            abbr: "HI",
             name: "海南",
           },
           {
-            key: 1,
+            abbr: "HE",
             name: "河北",
           },
           {
-            key: 2,
+            abbr: "HA",
             name: "河南",
           },
           {
-            key: 3,
+            abbr: "HL",
             name: "黑龙江",
           },
           {
-            key: 4,
+            abbr: "HB",
             name: "湖北",
           },
           {
-            key: 5,
+            abbr: "HN",
             name: "湖南",
           },
         ],
       },
       {
-        key: 6,
         firstWord: "J",
         cities: [
           {
-            key: 0,
+            abbr: "JL",
             name: "吉林",
           },
           {
-            key: 1,
+            abbr: "JS",
             name: "江苏",
           },
           {
-            key: 2,
+            abbr: "JX",
             name: "江西",
           },
         ],
       },
       {
-        key: 7,
         firstWord: "L",
         cities: [
           {
-            key: 0,
+            abbr: "LN",
             name: "辽宁",
           },
         ],
       },
       {
-        key: 8,
         firstWord: "N",
         cities: [
           {
-            key: 0,
+            abbr: "NM",
             name: "内蒙古",
           },
           {
-            key: 1,
+            abbr: "NX",
             name: "宁夏",
           },
         ],
       },
       {
-        key: 9,
         firstWord: "Q",
         cities: [
           {
-            key: 0,
+            abbr: "QH",
             name: "青海",
           },
         ],
       },
       {
-        key: 10,
         firstWord: "S",
         cities: [
           {
-            key: 0,
+            abbr: "SD",
             name: "山东",
           },
           {
-            key: 1,
+            abbr: "SX",
             name: "山西",
           },
           {
-            key: 2,
+            abbr: "SN",
             name: "陕西",
           },
           {
-            key: 3,
+            abbr: "SH",
             name: "上海",
           },
           {
-            key: 4,
+            abbr: "SC",
             name: "四川",
           },
         ],
       },
       {
-        key: 11,
         firstWord: "T",
         cities: [
           {
-            key: 0,
+            abbr: "TW",
             name: "台湾",
           },
           {
-            key: 1,
+            abbr: "TJ",
             name: "天津",
           },
         ],
       },
       {
-        key: 12,
         firstWord: "X",
         cities: [
           {
-            key: 0,
+            abbr: "XZ",
             name: "西藏",
           },
           {
-            key: 1,
+            abbr: "HK",
             name: "香港",
           },
           {
-            key: 2,
+            abbr: "XJ",
             name: "新疆",
           },
         ],
       },
       {
-        key: 13,
         firstWord: "Y",
         cities: [
           {
-            key: 0,
+            abbr: "YN",
             name: "云南",
           },
         ],
       },
       {
-        key: 14,
         firstWord: "Z",
         cities: [
           {
-            key: 0,
+            abbr: "ZJ",
             name: "浙江",
           },
         ],

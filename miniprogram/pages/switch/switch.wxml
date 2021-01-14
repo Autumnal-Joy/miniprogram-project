@@ -3,9 +3,9 @@
   <view class="content">
     <scroll-view scroll-y="true" scroll-top="0" scroll-left="0" scroll-with-animation="true" enable-back-to-top="true">
       <view class="region">
-        <view class="cities" wx:for="{{region}}" wx:key="key">
+        <view class="cities" wx:for="{{region}}" wx:key="firstWord">
           <view class="word">{{item.firstWord}}</view>
-          <view class="city" wx:for="{{item.cities}}" wx:key="key" bind:tap="changeLanguage" data-city="{{item.name}}">
+          <view class="city" wx:for="{{item.cities}}" wx:key="abbr" bind:tap="changeLanguage" data-city="{{item.name}}">
             {{item.name}}
           </view>
         </view>
