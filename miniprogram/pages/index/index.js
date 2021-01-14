@@ -47,7 +47,7 @@ Page({
   },
 
   callHospital() {
-    apiTools.call(120);
+    apiTools.call("120");
   },
 
   /**

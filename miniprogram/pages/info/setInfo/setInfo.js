@@ -21,29 +21,31 @@ Page({
   },
 
   sub(e) {
-    console.log(e.target.dataset);
     const type = e.target.dataset.type;
     const index = e.target.dataset.index;
+    console.log("更新", type);
     let target = [...this.data.person_info[type]];
     target.splice(index, 1);
-    console.log(type, index, target);
     this.setData({
       ["person_info." + type]: target,
     });
+    console.log("更新完毕", target);
   },
 
   add(e) {
-    console.log(e.target.dataset);
     const type = e.target.dataset.type;
+    console.log("更新", type);
     let target = [...this.data.person_info[type]];
     target.push("");
     this.setData({
       ["person_info." + type]: target,
     });
+    console.log("更新完毕", target);
   },
 
   onInputChange(e) {
     const type = e.target.dataset.type;
+    console.log("更新", type);
     let target = [...this.data.person_info[type]];
     if (type === "medicalHistory" || type === "emergencyCall") {
       const index = e.target.dataset.index;
@@ -54,12 +56,15 @@ Page({
     this.setData({
       ["person_info." + type]: target,
     });
+    console.log("更新完毕", target);
   },
 
   onPickerChange(e) {
+    console.log("更新", "birthday");
     this.setData({
       ["person_info.birthday"]: e.detail.value,
     });
+    console.log("更新完毕", e.detail.value);
   },
 
   async onUpdate() {

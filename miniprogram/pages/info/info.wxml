@@ -24,7 +24,14 @@
     <view class="row">
       <view class="text">年龄:</view>
       <view class="text-box">
-        <view class="item">{{person_info.age}}</view>
+        <wxs module="age">
+          module.exports = {
+            get: function (birthday) {
+              return getDate().getFullYear() - birthday.slice(0,4);
+            }
+          }
+        </wxs>
+        <view class="item">{{age.get(person_info.birthday)}}</view>
       </view>
     </view>
     <view class="col">
