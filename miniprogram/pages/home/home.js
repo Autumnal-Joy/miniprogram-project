@@ -1,6 +1,5 @@
 // pages/home/home.js
 const tools = require("../../utils/tools");
-const app = getApp();
 
 Page({
   /**
