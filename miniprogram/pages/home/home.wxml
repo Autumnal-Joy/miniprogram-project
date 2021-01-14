@@ -18,8 +18,8 @@
       <image src="./icons/phonenumber.png" mode="widthFix" bind:tap="makePhoneCall"></image>
     </view>
     <view class="right">
-      <picker class="picker" bindchange="onPickerChange" value="{{index}}" range="{{phones}}" range-key="number">
-        <view class="phone">{{phones[index].number}}</view>
+      <picker class="picker" bindchange="onPickerChange" value="{{index}}" range="{{person_info.emergencyCall}}">
+        <view class="phone">{{person_info.emergencyCall[index]}}</view>
       </picker>
     </view>
   </view>
