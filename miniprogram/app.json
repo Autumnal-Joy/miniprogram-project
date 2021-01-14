@@ -12,9 +12,7 @@
     "pages/route/keche/keche",
     "pages/route/taxi/taxi",
     "pages/route/train/train",
-    "pages/route/walk/walk",
-    "pages/remind/medicine/medicine",
-    "pages/remind/no_r_again/no_r_again"
+    "pages/route/walk/walk"
   ],
   "window": {
     "navigationBarBackgroundColor": "#000000",
