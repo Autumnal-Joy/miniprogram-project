@@ -20,15 +20,15 @@ Page({
 
   makePhoneCall() {
     let phoneNumber = this.data.phones[this.data.index].number;
-    apiTools.call(phoneNumber).catch(err => {
-      console.log(err);
-    });
+    wx.makePhoneCall({
+      phoneNumber,
+    }).catch(console.log);
   },
 
   callHospital() {
-    apiTools.call("120").catch(err => {
-      console.log(err);
-    });
+    wx.makePhoneCall({
+      phoneNumber: "120",
+    }).catch(console.log);
   },
 
   /**
