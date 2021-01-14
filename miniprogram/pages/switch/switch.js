@@ -11,6 +11,15 @@ Page({
     unset: true,
     region: [
       {
+        firstWord: "*",
+        cities: [
+          {
+            abbr: "Standard",
+            name: "普通话",
+          },
+        ],
+      },
+      {
         firstWord: "A",
         cities: [
           {
