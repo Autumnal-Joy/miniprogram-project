@@ -7,7 +7,7 @@
   top: 100rpx;
   left: 20rpx;
   width: 100rpx;
-  z-index: 0;
+  z-index: 1;
 }
 .start{
   margin-top: -840rpx;
@@ -28,14 +28,14 @@
   top: 200rpx;
   left: 20rpx;
   width: 100rpx;
-  z-index: 0;
+  z-index: 1;
 }
 .busi{
   position: absolute;
   top: 330rpx;
   left: 30rpx;
   width: 90rpx;
-  z-index: 0;
+  z-index: 1;
 }
 .bus{
   margin-top: 320rpx;
@@ -47,7 +47,7 @@
   top: 322rpx;
   left: 172rpx;
   width: 100rpx;
-  z-index: 0;
+  z-index: 1;
 }
 .keche{
   margin-top: -47rpx;
@@ -64,7 +64,7 @@
   top: 316rpx;
   left: 323rpx;
   width: 110rpx;
-  z-index: 0;
+  z-index: 1;
 }
 .train{
   margin-top: -46rpx;
@@ -76,7 +76,7 @@
   top: 322rpx;
   left: 480rpx;
   width: 100rpx;
-  z-index: 0;
+  z-index: 1;
 }
 .walk{
   margin-top: -46rpx;
@@ -88,7 +88,7 @@
   top: 323rpx;
   left: 620rpx;
   width: 100rpx;
-  z-index: 0;
+  z-index: 1;
 }
 .talk{
   margin-top: 420rpx;
@@ -101,5 +101,5 @@
   top: 580rpx;
   left: 240rpx;
   width: 280rpx;
-  z-index: 0;
+  z-index: 1;
 }
