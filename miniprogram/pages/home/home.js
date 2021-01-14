@@ -1,6 +1,4 @@
 // pages/home/home.js
-const apiTools = require("../../utils/apiTools");
-
 Page({
   /**
    * 页面的初始数据
@@ -19,7 +17,7 @@ Page({
   },
 
   makePhoneCall() {
-    let phoneNumber = this.data.phones[this.data.index].number;
+    let phoneNumber = this.data.person_info.emergencyCall[this.data.index];
     wx.makePhoneCall({
       phoneNumber,
     }).catch(console.log);
