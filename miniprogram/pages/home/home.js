@@ -1,5 +1,5 @@
 // pages/home/home.js
-const apiTools = require("../../utils/apiTools");
+const tools = require("../../utils/tools");
 
 Page({
   /**
@@ -7,20 +7,9 @@ Page({
    */
   data: {
     index: 0,
-    phones: [
-      {
-        key: 0,
-        number: 120,
-      },
-      {
-        key: 1,
-        number: 110,
-      },
-      {
-        key: 2,
-        number: 10086,
-      },
-    ],
+    person_info: {
+      emergencyCall: [],
+    },
   },
 
   onPickerChange(event) {
@@ -30,16 +19,16 @@ Page({
   },
 
   makePhoneCall() {
-    let phoneNumber = this.data.phones[this.data.index].number;
-    apiTools.call(phoneNumber.toString()).catch(err => {
-      console.log(err);
-    });
+    let phoneNumber = this.data.person_info.emergencyCall[this.data.index];
+    wx.makePhoneCall({
+      phoneNumber,
+    }).catch(console.log);
   },
 
   callHospital() {
-    apiTools.call("120").catch(err => {
-      console.log(err);
-    });
+    wx.makePhoneCall({
+      phoneNumber: "120",
+    }).catch(console.log);
   },
 
   /**
@@ -55,7 +44,9 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {},
+  onShow: function () {
+    tools.loadData.call(this, "home.onShow");
+  },
 
   /**
    * 生命周期函数--监听页面隐藏

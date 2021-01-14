@@ -27,7 +27,13 @@
         <wxs module="age">
           module.exports = {
             get: function (birthday) {
-              return getDate().getFullYear() - birthday.slice(0,4);
+              date = getDate();
+              var today = [date.getFullYear(), date.getMonth() + 1, date.getDate()];
+              var birth = birthday.split("-");
+              if (today[2] >= birth[2] && today[1] >= birth[1]) {
+                return today[0] - birth[0];
+              }
+              return today[0] - birth[0] - 1;
             }
           }
         </wxs>

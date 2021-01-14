@@ -21,7 +21,7 @@
   </view>
   <view class="middle">
     <view class="unset">
-      <view class="text" bind:tap="changeMask">{{city?city:"选择地区"}}</view>
+      <view class="text" bind:tap="changeMask">{{person_info.city?person_info.city:"选择地区"}}</view>
       <view class="image">
         <image src="./icons/search.png" mode="widthFix"></image>
       </view>

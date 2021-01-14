@@ -1,6 +1,4 @@
 // pages/index/index.js
-const apiTools = require("../../utils/apiTools");
-
 Page({
   /**
    * 页面的初始数据
@@ -47,7 +45,13 @@ Page({
   },
 
   callHospital() {
-    apiTools.call("120");
+    wx.makePhoneCall({
+      phoneNumber: "120",
+    })
+      .catch(console.log)
+      .then(() => {
+        this.onStart();
+      });
   },
 
   /**
