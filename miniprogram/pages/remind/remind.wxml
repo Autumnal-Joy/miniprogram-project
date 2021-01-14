@@ -1,3 +1,4 @@
 <!-- pages/remind/remind.wxml -->
 <background></background>
 <to-switch></to-switch>
+<view class="weather">天气</view>
