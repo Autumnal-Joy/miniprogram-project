@@ -1,4 +1,5 @@
 // pages/switch/switch.js
+const tools = require("../../utils/tools");
 const app = getApp();
 
 Page({
@@ -7,7 +8,9 @@ Page({
    */
   data: {
     mask: false,
-    city: "",
+    person_info: {
+      city: "",
+    },
     unset: true,
     region: [
       {
@@ -317,52 +320,8 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: async function (options) {
-    console.group("switch.onLoad");
-    try {
-      var { data: person_info } = await wx.getStorage({
-        key: "person_info",
-      });
-      console.log("读取本地缓存", person_info);
-    } catch (err) {
-      console.log("本地缓存读取失败", err);
-      try {
-        let _openid = await app.globalData.login();
-        let collection = wx.cloud
-          .database({
-            env: "chuyan-5g4flozv2fa0a4f5",
-          })
-          .collection("person_info");
-        let list = await collection
-          .where({
-            _openid,
-          })
-          .get();
-        console.log("读取云数据库", list);
-        if (list.data.length) {
-          person_info = list.data[0];
-        } else {
-          person_info = {};
-        }
-      } catch (err) {
-        console.log("云数据库读取失败", err);
-      } finally {
-        try {
-          let res = await wx.setStorage({
-            key: "person_info",
-            data: person_info,
-          });
-          console.log("设置本地缓存", res);
-        } catch (err) {
-          console.log("本地缓存设置失败", err);
-        }
-      }
-    } finally {
-      this.setData({
-        city: person_info.city || "",
-      });
-    }
-    console.groupEnd();
+  onLoad: function (options) {
+    tools.loadData.call(this, app, "switch.onLoad");
   },
 
   /**
