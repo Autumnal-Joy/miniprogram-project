@@ -149,59 +149,59 @@ async function updateData(functionName) {
 }
 
 async function wrappedIAC(a, file) {
-  var IAC1, IAC2, IAC3;
+  var audio_city_mp3, audio_city_m4a, audio_std_mp3;
   try {
     await new Promise((resolve, reject) => {
-      IAC1 = wx.createInnerAudioContext();
-      IAC1.onEnded(() => {
-        IAC1.destroy();
-        console.log("destroy IAC1", IAC1);
+      audio_city_mp3 = wx.createInnerAudioContext();
+      audio_city_mp3.onEnded(() => {
+        audio_city_mp3.destroy();
+        console.log("destroy audio_city_mp3", audio_city_mp3);
       });
-      IAC1.onCanplay(() => {
+      audio_city_mp3.onCanplay(() => {
         resolve();
-        console.log("create IAC1", IAC1);
+        console.log("create audio_city_mp3", audio_city_mp3);
       });
       setTimeout(reject, 500);
-      IAC1.src = `cloud://chuyan-5g4flozv2fa0a4f5.6368-chuyan-5g4flozv2fa0a4f5-1304712061/audios/${app.globalData.person_info.city.abbr}/${file}.mp3`;
+      audio_city_mp3.src = `cloud://chuyan-5g4flozv2fa0a4f5.6368-chuyan-5g4flozv2fa0a4f5-1304712061/audios/${app.globalData.person_info.city.abbr}/${file}.mp3`;
     });
-    IAC1.play();
+    audio_city_mp3.play();
   } catch (error) {
-    IAC1.destroy();
+    audio_city_mp3.destroy();
     try {
       await new Promise((resolve, reject) => {
-        IAC2 = wx.createInnerAudioContext();
-        IAC2.onEnded(() => {
-          IAC2.destroy();
-          console.log("destroy IAC2", IAC2);
+        audio_city_m4a = wx.createInnerAudioContext();
+        audio_city_m4a.onEnded(() => {
+          audio_city_m4a.destroy();
+          console.log("destroy audio_city_m4a", audio_city_m4a);
         });
-        IAC2.onCanplay(() => {
+        audio_city_m4a.onCanplay(() => {
           resolve();
-          console.log("create IAC2", IAC2);
+          console.log("create audio_city_m4a", audio_city_m4a);
         });
         setTimeout(reject, 500);
-        IAC2.src = `cloud://chuyan-5g4flozv2fa0a4f5.6368-chuyan-5g4flozv2fa0a4f5-1304712061/audios/${app.globalData.person_info.city.abbr}/${file}.m4a`;
-        IAC2.play();
+        audio_city_m4a.src = `cloud://chuyan-5g4flozv2fa0a4f5.6368-chuyan-5g4flozv2fa0a4f5-1304712061/audios/${app.globalData.person_info.city.abbr}/${file}.m4a`;
+        audio_city_m4a.play();
       });
     } catch (error) {
-      IAC2.destroy();
+      audio_city_m4a.destroy();
       try {
         await new Promise((resolve, reject) => {
-          IAC3 = wx.createInnerAudioContext();
-          IAC3.onEnded(() => {
-            IAC3.destroy();
-            console.log("destroy IAC3", IAC3);
+          audio_std_mp3 = wx.createInnerAudioContext();
+          audio_std_mp3.onEnded(() => {
+            audio_std_mp3.destroy();
+            console.log("destroy audio_std_mp3", audio_std_mp3);
           });
-          IAC3.onCanplay(() => {
+          audio_std_mp3.onCanplay(() => {
             resolve();
-            console.log("create IAC3", IAC3);
+            console.log("create audio_std_mp3", audio_std_mp3);
           });
           setTimeout(reject, 500);
-          IAC3.src = `cloud://chuyan-5g4flozv2fa0a4f5.6368-chuyan-5g4flozv2fa0a4f5-1304712061/audios/Standard/${file}.mp3`;
+          audio_std_mp3.src = `cloud://chuyan-5g4flozv2fa0a4f5.6368-chuyan-5g4flozv2fa0a4f5-1304712061/audios/Standard/${file}.mp3`;
         });
-        IAC3.play();
+        audio_std_mp3.play();
       } catch (error) {
-        IAC3.destroy();
-        console.log("audio error");
+        audio_std_mp3.destroy();
+        console.log("音频加载失败");
       }
     }
   }

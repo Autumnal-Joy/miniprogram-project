@@ -12,6 +12,10 @@ Page({
       emergencyCall: [],
       home: "",
       medicalHistory: "",
+      city: {
+        abbr: "Standard",
+        name: "普通话",
+      },
     },
     avatarUrl: "./icons/user.png",
     userInfo: [],

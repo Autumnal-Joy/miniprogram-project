@@ -11,7 +11,6 @@ Page({
     IAC: null,
     index: 0,
     person_info: {
-      emergencyCall: [""],
       city: {
         abbr: "Standard",
         name: "普通话",
