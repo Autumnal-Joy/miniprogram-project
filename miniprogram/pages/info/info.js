@@ -33,6 +33,9 @@ Page({
 
   delAll() {
     tools.delData();
+    wx.reLaunch({
+      url: "./info",
+    }).catch(console.log);
   },
 
   /**
