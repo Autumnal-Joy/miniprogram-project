@@ -115,6 +115,7 @@ Page({
    */
   onUnload: function () {
     this.stopShouting();
+    this.data.IAC.destroy();
   },
 
   /**
