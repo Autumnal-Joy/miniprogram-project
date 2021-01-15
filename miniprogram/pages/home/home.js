@@ -8,6 +8,7 @@ Page({
   data: {
     shouting: false,
     paused: false,
+    IAC: null,
     index: 0,
     person_info: {
       emergencyCall: [""],
@@ -16,7 +17,6 @@ Page({
         name: "普通话",
       },
     },
-    IAC: null,
   },
 
   onPickerChange(event) {
@@ -43,7 +43,11 @@ Page({
   callHospital() {
     wx.makePhoneCall({
       phoneNumber: "120",
-    }).catch(console.log);
+    })
+      .then(() => {
+        this.startShouting();
+      })
+      .catch(console.log);
   },
 
   speak(e) {
@@ -75,11 +79,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var IAC = wx.createInnerAudioContext();
+    let IAC = wx.createInnerAudioContext();
     IAC.src =
       "cloud://chuyan-5g4flozv2fa0a4f5.6368-chuyan-5g4flozv2fa0a4f5-1304712061/audios/shouting.m4a";
     IAC.loop = true;
     this.setData({ IAC });
+    if (options.shouting) {
+      setTimeout(() => {
+        this.startShouting();
+      }, 2000);
+    }
   },
 
   /**

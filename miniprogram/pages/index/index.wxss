@@ -2,6 +2,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 .index .top .up {
   display: flex;
@@ -68,4 +69,29 @@
 }
 .index .bottom .icon image {
   width: 180rpx;
+}
+.index .wrap {
+  position: absolute;
+  width: 400rpx;
+  height: 360rpx;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.index .wrap .up {
+  background-color: #d2efc6;
+  color: #38980c;
+}
+.index .wrap .down {
+  background-color: #edbcbc;
+  color: #dc2020;
+}
+.index .wrap .common {
+  height: 180rpx;
+  border-radius: 15rpx;
+  text-align: center;
+  line-height: 180rpx;
+  font-size: xx-large;
+  font-weight: bold;
+  box-shadow: 20rpx 20rpx 25rpx -15rpx #000;
 }

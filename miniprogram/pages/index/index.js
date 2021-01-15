@@ -6,6 +6,9 @@ Page({
    * 页面的初始数据
    */
   data: {
+    shouting: false,
+    paused: false,
+    IAC: null,
     swiper_items: [
       {
         key: 0,
@@ -40,26 +43,55 @@ Page({
     ],
   },
 
-  onStart() {
+  onStart(e, options) {
+    options = options || "";
+    console.log(options);
     wx.reLaunch({
-      url: "../home/home",
-    });
+      url: "../home/home" + options,
+    }).catch(console.log);
   },
 
   callHospital() {
     wx.makePhoneCall({
       phoneNumber: "120",
     })
-      .catch(console.log)
       .then(() => {
-        this.onStart();
-      });
+        this.onStart(null, "?shouting=true");
+      })
+      .catch(console.log);
+  },
+
+  startShouting() {
+    let IAC = this.data.IAC;
+    IAC.play();
+    this.setData({ shouting: true, paused: false });
+  },
+  pauseShouting() {
+    let IAC = this.data.IAC;
+    IAC.pause();
+    this.setData({ paused: true });
+  },
+  continueShouting() {
+    let IAC = this.data.IAC;
+    IAC.play();
+    this.setData({ paused: false });
+  },
+  stopShouting() {
+    let IAC = this.data.IAC;
+    IAC.stop();
+    this.setData({ shouting: false });
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {},
+  onLoad: function (options) {
+    var IAC = wx.createInnerAudioContext();
+    IAC.src =
+      "cloud://chuyan-5g4flozv2fa0a4f5.6368-chuyan-5g4flozv2fa0a4f5-1304712061/audios/shouting.m4a";
+    IAC.loop = true;
+    this.setData({ IAC });
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

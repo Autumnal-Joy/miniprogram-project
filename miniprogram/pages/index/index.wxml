@@ -30,7 +30,12 @@
       <image src="../home/icons/phone.png" mode="widthFix" bind:tap="callHospital"></image>
     </view>
     <view class="icon">
-      <image src="../home/icons/helper.png" mode="widthFix"></image>
+      <image src="../home/icons/helper.png" mode="widthFix" bind:tap="startShouting"></image>
     </view>
+  </view>
+  <view class="wrap" wx:if="{{shouting}}">
+    <view class="up common" bind:tap="continueShouting" wx:if="{{paused}}">继续</view>
+    <view class="up common" bind:tap="pauseShouting" wx:else>暂停</view>
+    <view class="down common" bind:tap="stopShouting">关闭</view>
   </view>
 </view>
