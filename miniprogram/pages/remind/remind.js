@@ -6,7 +6,15 @@ Page({
    * 页面的初始数据
    */
   data: {},
+  listenerSwitch: function(e) {
+    console.log('switch类型开关当前状态-----', e.detail.value);
 
+  },
+  new_mdc: function(options){
+    wx.navigateTo({
+       url: '/pages/remind/medicine/medicine',
+       })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
