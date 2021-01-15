@@ -8,14 +8,14 @@ Page({
   data: {
     person_info: {
       name: "",
-      birthday: "2000-01-01",
+      birthday: tools.today(-60),
       home: "",
       medicalHistory: [""],
       emergencyCall: [""],
     },
     picker: {
-      startday: "1900-01-01",
-      today: tools.today(),
+      startDay: tools.today(-120),
+      endDay: tools.today(),
     },
   },
 
