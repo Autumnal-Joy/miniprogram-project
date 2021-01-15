@@ -5,7 +5,7 @@
       <view class="region">
         <view class="cities" wx:for="{{region}}" wx:key="firstWord">
           <view class="word">{{item.firstWord}}</view>
-          <view class="city" wx:for="{{item.cities}}" wx:key="abbr" bind:tap="changeLanguage" data-city="{{item.name}}">
+          <view class="city" wx:for="{{item.cities}}" wx:key="abbr" bind:tap="changeLanguage" data-city="{{item}}">
             {{item.name}}
           </view>
         </view>
@@ -21,7 +21,9 @@
   </view>
   <view class="middle">
     <view class="unset">
-      <view class="text" bind:tap="changeMask">{{person_info.city?person_info.city:"选择地区"}}</view>
+      <view class="text" bind:tap="changeMask">
+        {{person_info.city?person_info.city.name:"选择地区"}}
+      </view>
       <view class="image">
         <image src="./icons/search.png" mode="widthFix"></image>
       </view>

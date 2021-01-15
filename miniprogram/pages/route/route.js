@@ -1,4 +1,6 @@
 // pages/route/route.js
+const tools = require("../../utils/tools");
+
 Page({
   /**
    * 页面的初始数据
@@ -18,7 +20,9 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {},
+  onShow: function () {
+    tools.wrappedIAC(getApp().globalData.person_info.city.abbr, "route");
+  },
 
   /**
    * 生命周期函数--监听页面隐藏

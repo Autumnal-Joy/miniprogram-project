@@ -2,7 +2,7 @@
 <background></background>
 <view class="switch">
   <to-switch></to-switch>
-  <view class="text">语言切换</view>
+  <view class="text" bind:tap="speak" data-file="switch">语言切换</view>
 </view>
 <view class="home">
   <view class="top-bottom">
@@ -10,7 +10,7 @@
       <view class="image">
         <image src="./icons/phone.png" mode="widthFix" bind:tap="callHospital"></image>
       </view>
-      <view class="text">打120</view>
+      <view class="text" bind:tap="speak" data-file="callHospital">打120</view>
     </view>
   </view>
   <view class="middle">
@@ -24,11 +24,16 @@
     </view>
   </view>
   <view class="top-bottom">
-    <view class="wrap">
+    <view class="wrap" wx:if="{{!shouting}}">
       <view class="image">
-        <image src="./icons/helper.png" mode="widthFix"></image>
+        <image src="./icons/helper.png" mode="widthFix" bind:tap="startShouting"></image>
       </view>
-      <view class="text">呼 救</view>
+      <view class="text" bind:tap="speak" data-file="callForHelp">呼 救</view>
+    </view>
+    <view class="wrap" wx:else>
+      <view class="up common" bind:tap="continueShouting" wx:if="{{paused}}">继续</view>
+      <view class="up common" bind:tap="pauseShouting" wx:else>暂停</view>
+      <view class="down common" bind:tap="stopShouting">关闭</view>
     </view>
   </view>
 </view>

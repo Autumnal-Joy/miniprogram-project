@@ -1,4 +1,6 @@
 // pages/index/index.js
+const tools = require("../../utils/tools");
+
 Page({
   /**
    * 页面的初始数据
@@ -62,7 +64,9 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {},
+  onReady: function () {
+    tools.loadData.call(this, "index.onReady");
+  },
 
   /**
    * 生命周期函数--监听页面显示

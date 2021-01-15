@@ -50,17 +50,37 @@
     display: flex;
     justify-content: center;
     .wrap {
-      width: min-content;
+      width: 400rpx;
+      height: 360rpx;
       .image {
         image {
+          display: block;
+          margin: auto;
           width: 300rpx;
         }
       }
       .text {
-        font-size: larger;
+        font-size: 41rpx;
         font-weight: bold;
         color: #7b0505;
         text-align: center;
+      }
+      .up {
+        background-color: #d2efc6;
+        color: #38980c;
+      }
+      .down {
+        background-color: #edbcbc;
+        color: #dc2020;
+      }
+      .common {
+        height: 180rpx;
+        border-radius: 15rpx;
+        text-align: center;
+        line-height: 180rpx;
+        font-size: xx-large;
+        font-weight: bold;
+        box-shadow: 20rpx 20rpx 25rpx -15rpx #000;
       }
     }
   }

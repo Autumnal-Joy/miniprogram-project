@@ -1,6 +1,4 @@
 mask .content {
-  display: flex;
-  justify-content: center;
   padding: 80rpx;
 }
 mask .content scroll-view {
