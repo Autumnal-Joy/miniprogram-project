@@ -22,7 +22,7 @@
   <view class="middle">
     <view class="unset">
       <view class="text" bind:tap="changeMask">
-        {{person_info.city?person_info.city.name:"选择地区"}}
+        {{person_info.city.name?person_info.city.name:"选择地区"}}
       </view>
       <view class="image">
         <image src="./icons/search.png" mode="widthFix"></image>

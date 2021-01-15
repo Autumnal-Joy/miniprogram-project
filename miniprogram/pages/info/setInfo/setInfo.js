@@ -8,7 +8,7 @@ Page({
   data: {
     person_info: {
       name: "",
-      birthday: tools.today(-60),
+      birthday: "",
       home: "",
       medicalHistory: [""],
       emergencyCall: [""],

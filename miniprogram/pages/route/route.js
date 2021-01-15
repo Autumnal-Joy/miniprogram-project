@@ -5,7 +5,14 @@ Page({
   /**
    * 页面的初始数据
    */
-  data: {},
+  data: {
+    person_info: {
+      city: {
+        abbr: "Standard",
+        name: "普通话",
+      },
+    },
+  },
 
   /**
    * 生命周期函数--监听页面加载
@@ -21,7 +28,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    tools.wrappedIAC(getApp().globalData.person_info.city.abbr, "route");
+    tools.wrappedIAC(this.data.person_info.city.abbr, "route");
   },
 
   /**

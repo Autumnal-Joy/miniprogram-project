@@ -7,11 +7,11 @@ Page({
    */
   data: {
     shouting: false,
+    waitShouting: false,
     paused: false,
     IAC: null,
     index: 0,
     person_info: {
-      emergencyCall: [""],
       city: {
         abbr: "Standard",
         name: "普通话",
@@ -45,7 +45,8 @@ Page({
       phoneNumber: "120",
     })
       .then(() => {
-        this.startShouting();
+        this.setData({ waitShouting: true });
+        this.stopShouting();
       })
       .catch(console.log);
   },
@@ -102,6 +103,10 @@ Page({
   onShow: function () {
     tools.loadData.call(this, "home.onShow");
     tools.wrappedIAC(this.data.person_info.city.abbr, "home");
+    if (this.data.waitShouting) {
+      this.startShouting();
+      this.setData({ waitShouting: false });
+    }
   },
 
   /**

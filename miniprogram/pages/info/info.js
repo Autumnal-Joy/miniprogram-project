@@ -12,6 +12,10 @@ Page({
       emergencyCall: [],
       home: "",
       medicalHistory: "",
+      city: {
+        abbr: "Standard",
+        name: "普通话",
+      },
     },
     avatarUrl: "./icons/user.png",
     userInfo: [],
@@ -25,6 +29,13 @@ Page({
         userInfo: e.detail.userInfo,
       });
     }
+  },
+
+  delAll() {
+    tools.delData();
+    wx.reLaunch({
+      url: "./info",
+    }).catch(console.log);
   },
 
   /**
