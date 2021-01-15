@@ -7,7 +7,7 @@ Page({
     src: "",
   },
   go2: function (options) {
-    wx.wx.navigateBack({
+    wx.navigateBack({
       delta: 1,
     });
   },
