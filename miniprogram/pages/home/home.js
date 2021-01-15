@@ -8,7 +8,7 @@ Page({
   data: {
     index: 0,
     person_info: {
-      emergencyCall: [],
+      emergencyCall: [""],
     },
   },
 
@@ -20,9 +20,17 @@ Page({
 
   makePhoneCall() {
     let phoneNumber = this.data.person_info.emergencyCall[this.data.index];
-    wx.makePhoneCall({
-      phoneNumber,
-    }).catch(console.log);
+    if (phoneNumber) {
+      wx.makePhoneCall({
+        phoneNumber,
+      }).catch(console.log);
+    } else {
+      wx.showToast({
+        title: "请前往个人信息页面填写紧急联系人电话",
+        icon: "none",
+        duration: 3000,
+      });
+    }
   },
 
   callHospital() {

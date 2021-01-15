@@ -32,6 +32,7 @@
 .home .middle .right .picker .phone {
   padding: 20rpx;
   color: #666666;
+  min-height: 45rpx;
 }
 .home .middle .right .picker .phone::after {
   content: "";
