@@ -1,6 +1,0 @@
-<!--miniprogram/pages/route/keche/keche.wxml-->
-<text>miniprogram/pages/route/keche/keche.wxml</text>
-<view>
-  <image class="kechehow" src="/pages/route/icons/cant.jpg" mode="widthFix"></image>
-</view>
-<button size="mini" bindtap="go2">返回</button>

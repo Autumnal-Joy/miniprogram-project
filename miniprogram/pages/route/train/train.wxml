@@ -1,6 +1,0 @@
-<!--miniprogram/pages/route/train/train.wxml-->
-<text>miniprogram/pages/route/train/train.wxml</text>
-<view>
-  <image class="trainhow" src="/pages/route/icons/cant.jpg" mode="widthFix"></image>
-</view>
-<button size="mini" bindtap="go2">返回</button>

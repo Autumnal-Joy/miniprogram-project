@@ -1,6 +1,0 @@
-<!--miniprogram/pages/route/taxi/taxi.wxml-->
-<text>miniprogram/pages/route/taxi/taxi.wxml</text>
-<view>
-  <image class="taxihow" src="/pages/route/icons/taxihow.jpg" mode="widthFix"></image>
-</view>
-<button size="mini" bindtap="go2">返回</button>

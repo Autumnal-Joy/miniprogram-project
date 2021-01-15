@@ -1,0 +1,5 @@
+<!-- pages/route/transport/transport.wxml -->
+<view>
+  <image class="transport" src="{{src}}" mode="widthFix"></image>
+</view>
+<button size="mini" bindtap="go2">返回</button>

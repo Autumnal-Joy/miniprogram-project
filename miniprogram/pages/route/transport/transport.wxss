@@ -1,12 +1,12 @@
-/* miniprogram/pages/route/train/train.wxss */
-.trainhow{
+/* pages/route/transport/transport.wxss */
+.transport {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 0;
 }
-button{
+button {
   line-height: 30px !important;
   font-weight: lighter !important;
   font-family: fantasy !important;
