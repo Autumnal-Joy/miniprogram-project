@@ -4,6 +4,7 @@ module.exports = {
   today,
   loadData,
   updateData,
+  delData,
   wrappedIAC,
 };
 function today(yearOffset) {
@@ -146,6 +147,26 @@ async function updateData(functionName) {
         });
     }
   }
+}
+
+function delData() {
+  app.globalData.person_info = null;
+  console.log("删除全局变量");
+  wx.clearStorage();
+  console.log("删除本地缓存");
+  app.globalData.login().then(_openid => {
+    wx.cloud
+      .database({
+        env: "chuyan-5g4flozv2fa0a4f5",
+      })
+      .collection("person_info")
+      .where({
+        _openid,
+      })
+      .remove()
+      .catch(console.log);
+  });
+  console.log("删除云数据库记录");
 }
 
 async function wrappedIAC(a, file) {

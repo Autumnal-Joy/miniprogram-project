@@ -63,3 +63,7 @@
     </view>
   </view>
 </view>
+<!--  -->
+<!-- 临时按钮 -->
+<!--  -->
+<view class="delAll" bind:tap="delAll">删除全部使用记录</view>
