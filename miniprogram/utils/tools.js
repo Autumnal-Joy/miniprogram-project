@@ -1,22 +1,24 @@
 const app = getApp();
 
 module.exports = {
-  today,
+  myDate,
   loadData,
   updateData,
   delData,
   wrappedIAC,
 };
-function today(yearOffset) {
-  yearOffset = yearOffset || 0;
-  let D = new Date();
-  let year = D.getFullYear();
-  let month = (D.getMonth() + 1).toString();
-  let date = D.getDate().toString();
-  return `${year + yearOffset}-${month.padStart(2, "0")}-${date.padStart(
-    2,
-    "0"
-  )}`;
+
+function myDate(...para) {
+  let D = new Date(...para);
+  this.yearOffset = function (yearOffset = 0) {
+    let year = (D.getFullYear() + yearOffset).toString();
+    let month = (D.getMonth() + 1).toString().padStart(2, "0");
+    let date = D.getDate().toString().padStart(2, "0");
+    return `${year}-${month}-${date}`;
+  };
+  this.today = function () {
+    return this.yearOffset();
+  };
 }
 
 async function loadData(functionName) {

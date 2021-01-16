@@ -14,8 +14,8 @@ Page({
       emergencyCall: [""],
     },
     picker: {
-      startDay: tools.today(-120),
-      endDay: tools.today(),
+      startDay: new tools.myDate().yearOffset(-120),
+      endDay: new tools.myDate().today(),
     },
   },
 

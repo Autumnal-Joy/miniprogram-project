@@ -40,6 +40,30 @@ Page({
       fail: console.log,
     });
 
+    wx.getWeRunData({
+      timeout: 10000,
+    })
+      .then(res => {
+        wx.cloud
+          .callFunction({
+            name: "login",
+            data: {
+              weRunData: wx.cloud.CloudID(res.cloudID),
+            },
+          })
+          .then(res => {
+            let weRunDataToday = res.result.event.weRunData.data.stepInfoList.pop();
+            console.log(weRunDataToday);
+            this.setData({
+              weRunDataToday: {
+                step: weRunDataToday.step,
+                time: new tools.myDate(weRunDataToday.timestamp * 1000).today(),
+              },
+            });
+          });
+      })
+      .catch(console.log);
+
     setTimeout(() => {
       console.log(JSON.stringify(this.data.climate, null, 2));
     }, 2000);
