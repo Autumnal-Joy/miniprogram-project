@@ -1,1 +1,68 @@
 /* miniprogram/pages/remind/medicine/medicine.wxss */
+.reviseMedicine{
+  width: 90%;
+  margin-left: 33rpx;
+  height: 360rpx;
+  border: 3rpx solid black;
+  margin-top: 30rpx;
+  color:black;
+  line-height: 80rpx;
+  font-size: smaller;
+}
+.capsule{
+  margin-top: 1rpx;
+  width: 80rpx;
+  margin-left: 15rpx;
+}
+.head{
+  display: inline;
+  margin-left: 60rpx;
+  border: 3rpx solid gray;
+  color: rgb(24, 83, 245);
+  font-weight: bold;
+  font-size: larger;
+  border-radius: 8rpx;
+}
+.input_name{
+  display: inline-table;
+  margin-left: 85rpx;
+  width: 260rpx;
+  height: 60rpx;
+  border: 2rpx solid gray;
+
+  background-color: white;
+}
+.input_howmuch{
+  display: inline-table;
+  margin-left: 26rpx;
+  width: 200rpx;
+  height: 60rpx;
+  border: 2rpx solid gray;
+  background-color: white;
+}
+.mplus1_frequency{
+  display: inline-block;
+}
+.picker1{
+  display: inline-block;
+  margin-top: -100rpx;
+  margin-left: 25rpx;
+  background-color: #fff;
+  width: 100rpx;
+  border: 3rpx solid #cccccc;
+  border-radius: 8rpx;
+}
+.day{
+  display: inline-block;
+}
+.picker2{
+  display: inline-block;
+  background-color: #fff;
+  width: 100rpx;
+  border: 3rpx solid #cccccc;
+  border-radius: 8rpx;
+  position: relative;
+}
+.times{
+  display: inline;
+}

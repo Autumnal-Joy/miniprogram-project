@@ -5,8 +5,28 @@ Page({
    * 页面的初始数据
    */
   data: {
-
-  },
+    dayIndex:'请选择',
+    Array:["1","2","3"],
+    timesIndex:'请选择',
+    },
+    /**
+    * 天数选择
+    */
+    day:function(e){
+    let thas = this;
+    thas.setData({
+      dayIndex:e.detail.value
+    });
+    },
+   /**
+    * 次数选择
+    */
+   times:function(e){
+    let thas = this;
+    thas.setData({
+      timesIndex:e.detail.value
+    });
+    },
 
   /**
    * 生命周期函数--监听页面加载

@@ -1,2 +1,19 @@
 <!--miniprogram/pages/remind/medicine/medicine.wxml-->
-<text>miniprogram/pages/remind/medicine/medicine.wxml</text>
+<view class="reviseMedicine">
+  <image class="capsule" src="/pages/remind/icons/capsule.png" mode="widthFix"></image>
+  <text class="head">药物一</text>
+  <view class="mplus1_name">名称
+    <input class="input_name" placeholder="如：阿莫西林" bindinput="nameInput" />
+  </view>
+  <view class="mplus1_howmuch">服用份量
+    <input class="input_howmuch" placeholder="如：半勺" bindinput="howmuchInput" />
+  </view>  
+  <view class="mplus1_frequency">服用频率
+    <picker class='picker1' mode="selector" range='{{Array}}' value='{{dayIndex}}' bindchange="day">{{dayIndex != "请选择"?Array[dayIndex]:"请选择"}}
+     </picker>
+      <label class="day" >天</label>
+      <picker class='picker2' mode="selector" range='{{Array}}' value='{{timesIndex}}' bindchange="times">{{timesIndex != "请选择"?Array[timesIndex]:"请选择"}}
+     </picker>
+      <label class="times">次</label>
+    </view>
+</view>
