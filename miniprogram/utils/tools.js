@@ -150,7 +150,7 @@ async function updateData(functionName) {
 }
 
 function delData() {
-  app.globalData.person_info = null;
+  app.globalData.person_info = undefined;
   console.log("删除全局变量");
   wx.clearStorage();
   console.log("删除本地缓存");
@@ -169,7 +169,7 @@ function delData() {
   console.log("删除云数据库记录");
 }
 
-async function wrappedIAC(a, file) {
+async function wrappedIAC(file) {
   var audio_city_mp3, audio_city_m4a, audio_std_mp3;
   try {
     await new Promise((resolve, reject) => {
@@ -188,6 +188,7 @@ async function wrappedIAC(a, file) {
     audio_city_mp3.play();
   } catch (error) {
     audio_city_mp3.destroy();
+    console.log("audio_city_mp3请求超时");
     try {
       await new Promise((resolve, reject) => {
         audio_city_m4a = wx.createInnerAudioContext();
@@ -205,6 +206,7 @@ async function wrappedIAC(a, file) {
       });
     } catch (error) {
       audio_city_m4a.destroy();
+      console.log("audio_city_m4a请求超时");
       try {
         await new Promise((resolve, reject) => {
           audio_std_mp3 = wx.createInnerAudioContext();
@@ -222,6 +224,7 @@ async function wrappedIAC(a, file) {
         audio_std_mp3.play();
       } catch (error) {
         audio_std_mp3.destroy();
+        console.log("audio_std_mp3请求超时");
         console.log("音频加载失败");
       }
     }

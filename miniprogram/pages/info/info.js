@@ -12,10 +12,6 @@ Page({
       emergencyCall: [],
       home: "",
       medicalHistory: "",
-      city: {
-        abbr: "Standard",
-        name: "普通话",
-      },
     },
     avatarUrl: "./icons/user.png",
     userInfo: [],
@@ -70,7 +66,7 @@ Page({
    */
   onShow: function () {
     tools.loadData.call(this, "info.onShow");
-    tools.wrappedIAC(this.data.person_info.city.abbr, "info");
+    tools.wrappedIAC("info");
   },
 
   /**

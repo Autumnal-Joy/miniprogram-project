@@ -7,7 +7,6 @@ Page({
    */
   data: {
     mask: false,
-    person_info: {},
     unset: true,
     region: [
       {

@@ -5,14 +5,7 @@ Page({
   /**
    * 页面的初始数据
    */
-  data: {
-    person_info: {
-      city: {
-        abbr: "Standard",
-        name: "普通话",
-      },
-    },
-  },
+  data: {},
 
   showLocation() {
     wx.getLocation({
@@ -43,7 +36,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    tools.wrappedIAC(this.data.person_info.city.abbr, "locate");
+    tools.wrappedIAC("locate");
   },
 
   /**

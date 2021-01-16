@@ -8,7 +8,6 @@ Page({
   data: {
     shouting: false,
     paused: false,
-    IAC: null,
     swiper_items: [
       {
         key: 0,

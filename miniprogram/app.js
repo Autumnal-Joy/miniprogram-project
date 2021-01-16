@@ -7,8 +7,6 @@ App({
     });
 
     this.globalData = {
-      _openid: null,
-      person_info: null,
       login: async () => {
         let _openid = this.globalData._openid;
         if (_openid) {

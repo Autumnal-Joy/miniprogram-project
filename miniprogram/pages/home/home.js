@@ -9,14 +9,7 @@ Page({
     shouting: false,
     waitShouting: false,
     paused: false,
-    IAC: null,
     index: 0,
-    person_info: {
-      city: {
-        abbr: "Standard",
-        name: "普通话",
-      },
-    },
   },
 
   onPickerChange(event) {
@@ -52,7 +45,7 @@ Page({
   },
 
   speak(e) {
-    tools.wrappedIAC(this.data.person_info.city.abbr, e.target.dataset.file);
+    tools.wrappedIAC(e.target.dataset.file);
   },
 
   startShouting() {
@@ -102,7 +95,7 @@ Page({
    */
   onShow: function () {
     tools.loadData.call(this, "home.onShow");
-    tools.wrappedIAC(this.data.person_info.city.abbr, "home");
+    tools.wrappedIAC("home");
     if (this.data.waitShouting) {
       this.startShouting();
       this.setData({ waitShouting: false });
