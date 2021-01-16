@@ -1,5 +1,6 @@
 // pages/remind/remind.js
 const tools = require("../../utils/tools");
+const amapFile = require("../../libs/amap-wx.130");
 
 Page({
   /**
@@ -17,7 +18,18 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {},
+  onLoad: function (options) {
+    let amap = new amapFile.AMapWX({
+      key: "1100277b2a7f155bee88cd00fcb9397e",
+    });
+    amap.getWeather({
+      success: climate => {
+        this.setData({ climate });
+        console.log(JSON.stringify(climate, null, 2));
+      },
+      fail: console.log,
+    });
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
