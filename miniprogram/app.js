@@ -24,5 +24,9 @@ App({
         }
       },
     };
+
+    wx.setKeepScreenOn({
+      keepScreenOn: true,
+    });
   },
 });
