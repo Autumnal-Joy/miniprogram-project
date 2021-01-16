@@ -23,12 +23,26 @@ Page({
       key: "1100277b2a7f155bee88cd00fcb9397e",
     });
     amap.getWeather({
-      success: climate => {
-        this.setData({ climate });
-        console.log(JSON.stringify(climate, null, 2));
+      success: res => {
+        this.setData({
+          ["climate.liveData"]: res,
+        });
       },
       fail: console.log,
     });
+    amap.getWeather({
+      type: "forecast",
+      success: res => {
+        this.setData({
+          ["climate.forecast"]: res.forecast,
+        });
+      },
+      fail: console.log,
+    });
+
+    setTimeout(() => {
+      console.log(JSON.stringify(this.data.climate, null, 2));
+    }, 2000);
   },
 
   /**
