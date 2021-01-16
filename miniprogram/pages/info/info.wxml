@@ -18,7 +18,7 @@
     <view class="row">
       <view class="text">姓名:</view>
       <view class="text-box">
-        <view class="item">{{person_info.name}}</view>
+        <view class="item">{{person_info.name||userInfo.nickName}}</view>
       </view>
     </view>
     <view class="row">

@@ -6,15 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    person_info: {
-      name: "",
-      birthday: "",
-      emergencyCall: [],
-      home: "",
-      medicalHistory: "",
-    },
     avatarUrl: "./icons/user.png",
-    userInfo: [],
+    userInfo: {},
   },
 
   onGetUserInfo: function (e) {
