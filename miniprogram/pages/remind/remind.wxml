@@ -31,7 +31,7 @@
     </view>
     <view class="bottom">
       <text style="color: #D28821;">温馨提示：</text>
-      <text>今天天气{{text.temp}}，{{text.wind}}，{{text.sick+"感冒，"}}{{text.remind}}</text>
+      <text>{{text&&("今天天气"+text.temp+"，"+text.wind+"，"+text.sick+"感冒，"+text.remind)}}</text>
     </view>
   </view>
 </view>
