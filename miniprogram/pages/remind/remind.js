@@ -6,7 +6,9 @@ Page({
   /**
    * 页面的初始数据
    */
-  data: {},
+  data: {
+    show: true,
+  },
 
   setText(data) {
     let t = data.temperature;
@@ -69,19 +71,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let amap = new amapFile.AMapWX({
-      key: "1100277b2a7f155bee88cd00fcb9397e",
-    });
-    amap.getWeather({
-      success: res => {
-        this.setData({
-          ["climate.liveData"]: res.liveData,
-        });
-        this.setText(res.liveData);
-      },
-      fail: console.log,
-    });
-
+    // let amap = new amapFile.AMapWX({
+    //   key: "1100277b2a7f155bee88cd00fcb9397e",
+    // });
+    // amap.getWeather({
+    //   success: res => {
+    //     this.setData({
+    //       ["climate.liveData"]: res.liveData,
+    //     });
+    //     this.setText(res.liveData);
+    //   },
+    //   fail: console.log,
+    // });
     // 天气预报
     // amap.getWeather({
     //   type: "forecast",
@@ -104,8 +105,7 @@ Page({
    */
   onShow: async function () {
     tools.loadData.call(this, "remind.onShow");
-    tools.wrappedIAC("remind");
-
+    // tools.wrappedIAC("remind");
     if (this.data.step === undefined) {
       try {
         await wx.authorize({

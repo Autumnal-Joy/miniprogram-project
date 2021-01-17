@@ -1,22 +1,22 @@
-mask .content {
+.content {
   padding: 80rpx;
 }
-mask .content scroll-view {
+.content scroll-view {
   height: 1000rpx;
   width: 600rpx;
   background-color: #fff;
 }
-mask .content scroll-view .region .cities {
+.content scroll-view .region .cities {
   padding: 10rpx;
   border-top: 4rpx solid #cccccc;
 }
-mask .content scroll-view .region .cities .word {
+.content scroll-view .region .cities .word {
   font-size: xx-large;
   padding: 5rpx;
   color: #981fde;
   font-weight: bold;
 }
-mask .content scroll-view .region .cities .city {
+.content scroll-view .region .cities .city {
   border-top: 2rpx solid #cccccc;
   font-size: x-large;
   padding: 10rpx 30rpx;

@@ -5,12 +5,11 @@
     "pages/info/info",
     "pages/info/setInfo/setInfo",
     "pages/remind/remind",
+    "pages/remind/medicine/medicine",
     "pages/locate/locate",
     "pages/route/route",
     "pages/route/transport/transport",
-    "pages/switch/switch",
-    "pages/remind/medicine/medicine",
-    "pages/remind/no_r_again/no_r_again"
+    "pages/switch/switch"
   ],
   "window": {
     "navigationBarBackgroundColor": "#000000",

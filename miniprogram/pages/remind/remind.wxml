@@ -1,5 +1,24 @@
 <!-- pages/remind/remind.wxml -->
 <background></background>
+<mask wx:if="{{show}}">
+  <view class="content">
+    <view class="wrap">
+      <view class="box">
+        <view class="title">今日您需要服用的药物为：</view>
+        <view class="text" wx:for="{{person_info.medicine}}" wx:key="name">
+          {{item.name}} 分量：{{item.amount}} 频率：{{item.dayIndex}}天{{item.timesIndex}}次
+        </view>
+      </view>
+      <view class="box">
+        <view class="title">您今天的微信运动步数是：</view>
+        <view class="text" wx:if="{{false}}">还没达到今天目标，要注意加强锻炼哦！</view>
+        <view class="text" wx:else>已经达到今天目标啦，继续保持哦！</view>
+      </view>
+    </view>
+    <view class="btn confirm">确定</view>
+    <view class="btn not-remind">不再提醒</view>
+  </view>
+</mask>
 <view class="section">
   <view class="head">天气</view>
   <view class="weather">

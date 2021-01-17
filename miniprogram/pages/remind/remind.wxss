@@ -1,4 +1,39 @@
 /* pages/remind/remind.wxss */
+.content {
+  width: 90%;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background-color: #f3edb1;
+}
+.content .wrap {
+  padding: 10rpx;
+}
+.content .wrap .box {
+  padding: 40rpx;
+}
+.content .wrap .box .title {
+  font-weight: bold;
+}
+.content .wrap .box + .box {
+  border-top: 1rpx solid #888;
+}
+.content .btn {
+  font-size: large;
+  font-weight: bold;
+  text-align: center;
+  padding: 40rpx;
+  border-radius: 10rpx;
+}
+.content .confirm {
+  background-color: #add17f;
+  color: #02bb00;
+}
+.content .not-remind {
+  background-color: #ec8e72;
+  color: #2f5fc3;
+}
 .section {
   margin: 30rpx 0;
 }
