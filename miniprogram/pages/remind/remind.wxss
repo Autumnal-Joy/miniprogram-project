@@ -1,126 +1,118 @@
 /* pages/remind/remind.wxss */
-.weathertext{
-  width: 140rpx;
-  height: 50rpx;
+.section {
+  margin: 30rpx 0;
+}
+.section .head {
   border: 3rpx solid lightgrey;
   border-radius: 3px;
-  float: left;
-  margin-left: 10rpx;
-  margin-top: 20rpx;
+  font-weight: bold;
+  color: #1e18cb;
+  background-color: white;
+  width: fit-content;
+  min-width: 4em;
   text-align: center;
-  color: rgb(31, 19, 185);
+}
+.section .weather .top {
+  position: relative;
+  color: #1e18cb;
+  height: 250rpx;
+}
+.section .weather .top image {
+  width: 100%;
+  height: 250rpx;
+}
+.section .weather .top .deg {
+  position: absolute;
+  top: 50%;
+  left: 30rpx;
+  transform: translateY(-50%);
+}
+.section .weather .top .deg .big {
+  font-size: 150rpx;
+}
+.section .weather .middle {
+  background-color: #f5f4f4;
+  display: flex;
+  justify-content: space-between;
+  padding: 10rpx 40rpx;
+}
+.section .weather .middle .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.section .weather .middle .info .image {
+  width: 125rpx;
+}
+.section .weather .middle .info .title {
   font-weight: bold;
 }
-.wth_image1{
-  width: 100%;
-  margin-top: 10rpx;
-  z-index: 2;
+.section .weather .middle .info .text {
+  font-size: medium;
 }
-.wth_image{
-  width: 100%;
-  margin-top: -10rpx;
-  z-index: 2;
+.section .weather .bottom {
+  background-color: white;
+  padding: 20rpx 40rpx;
 }
-.medicinehead{
-  width: 270rpx;
-  height: 100rpx;
-  border: 3rpx solid lightgrey;
-  border-radius: 3px;
-  float: left;
-  margin-left: 10rpx;
-  margin-top: 90rpx;
-  color: rgb(31, 19, 185);
-  font-weight: bold;
+.section .medicine .item {
+  border-top: 3rpx solid black;
+  border-bottom: 3rpx solid black;
+  margin-bottom: 5rpx;
+  padding: 10rpx;
 }
-.waittoeat{
-  display:  table-footer-group;
-  margin-top: 10rpx;
-  border: 3rpx solid black;
-  width: 100%;
-  color:black;
-  line-height: 60rpx;
+.section .medicine .item .up {
+  display: flex;
+  align-items: center;
 }
-.capsule{
-  margin-top: 4rpx;
+.section .medicine .item .up .capsule {
   width: 80rpx;
-  margin-left: 15rpx;
 }
-.m1_name{
-  margin-top: -83rpx;
-  margin-left: 140rpx;
+.section .medicine .item .down {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 40rpx;
 }
-.m1_howmuch{
-  margin-top: 20rpx;
-  margin-left: 30rpx;
+.section .medicine .new_mdc_button {
+  width: fit-content;
+  padding: 20rpx;
+  margin: 10rpx;
+  margin-left: auto;
+  background-color: #5677fc;
+  color: white;
+  border-radius: 6rpx;
 }
-.m1_frequency{
-  margin-top: -60rpx;
-  margin-left: 300rpx;
+.section .we-run {
+  border-top: 3rpx solid black;
+  border-bottom: 3rpx solid black;
+  background-color: #e6f9df;
+  padding: 10rpx;
 }
-.switch{
-  margin-top: -70rpx;
-  margin-left: 630rpx;
+.section .we-run .row {
+  display: flex;
+  align-items: center;
+  padding: 10rpx;
 }
-.new_mdc_button{
-  margin-top: 5rpx;
-  margin-left: 455rpx;
-    line-height: 30px !important;
-    font-weight: lighter !important;
-    font-family: fantasy !important;
-    border-radius:6rpx;
-    height: 75rpx;
-    color:white;
-    border: solid rgba(226, 245, 207, 0);
-    background-color: rgb(41, 79, 247);
+.section .we-run .row .text {
+  width: 11em;
 }
-.exercisehead{
-  width: 270rpx;
-  height: 50rpx;
-  border: 3rpx solid lightgrey;
-  border-radius: 3px;
-  float: left;
-  margin-left: 10rpx;
-  margin-top: 150rpx;
-  color: rgb(31, 19, 185);
-  font-weight: bold;
-}
-.howExercise{
-  width: 100%;
-  height: 600rpx;
-  border: 3rpx solid black;
-  margin-top: 10rpx;
-  color:black;
-  font-weight: bold;
-  background-color: rgb(226, 245, 207);
-  line-height: 90rpx;
-}
-.input_alreadywalk{
-  display: inline-table;
-  margin-left: 73rpx;
-  width: 160rpx;
-  height: 70rpx;
+.section .we-run .row .input {
   border: 2rpx solid gray;
-  border-radius:15rpx;
+  border-radius: 10rpx;
   background-color: white;
+  padding: 10rpx;
+  width: 200rpx;
+  height: 1.4rem;
 }
-.input_needwalk{
-  display: inline-table;
-  margin-left: 26rpx;
-  width: 160rpx;
-  height: 70rpx;
-  border: 2rpx solid gray;
-  border-radius:15rpx;
-  background-color: white;
+.section .we-run .row .btn {
+  margin: 0;
+  box-sizing: content-box;
 }
-.refreshwalk_button{
-  top: -83rpx;
-  margin-left: 580rpx;
-    line-height: 30px !important;
-    font-weight: lighter !important;
-    font-family: fantasy !important;
-    border-radius:13rpx;
-    height: 75rpx;
-    color:white;
-    border: solid rgb(226, 245, 207);
-    background-color: rgb(41, 79, 247);
+.section .we-run .row .refreshwalk_button {
+  border-radius: 10rpx;
+  color: white;
+  background-color: #5677fc;
+  width: fit-content;
+  padding: 10rpx;
+  margin-left: auto;
 }

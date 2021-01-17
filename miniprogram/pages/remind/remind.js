@@ -6,15 +6,66 @@ Page({
   /**
    * 页面的初始数据
    */
-  data: {},
+  data: {
+    text: {
+      temp: "寒冷",
+      clothes: "coat",
+      sick: "极易发感冒，记得穿厚点",
+      wind: "微风",
+    },
+  },
+
+  setText(data) {
+    let t = data.temperature;
+    let w = +/\d/.exec(data.windpower);
+    let text = {};
+    if (t <= 5) {
+      text.temp = "寒冷";
+      text.clothes = "coat";
+      text.sick = "极易发感冒，记得穿厚点";
+    } else if (t <= 15) {
+      text.temp = "凉";
+      text.clothes = "sweater";
+      text.sick = "较易发感冒，及时加衣服哦";
+    } else if (t <= 25) {
+      text.temp = "舒适";
+      text.clothes = "shirt";
+      text.sick = "易发感冒，别忘了保暖哦";
+    } else {
+      text.temp = "炎热";
+      text.clothes = "T-shirt";
+      text.sick = "不易发感冒，及时减衣服哦";
+    }
+    if (w <= 1) {
+      text.wind = "微风";
+    } else if (w <= 4) {
+      text.wind = "弱风";
+    } else if (w <= 6) {
+      text.wind = "和风";
+    } else {
+      text.wind = "强风";
+    }
+    this.setData({ text });
+  },
 
   listenerSwitch: function (e) {
     console.log("switch类型开关当前状态-----", e.detail.value);
   },
+
   new_mdc: function (options) {
     wx.navigateTo({
       url: "/pages/remind/medicine/medicine",
     });
+  },
+
+  stepChange(e) {
+    this.setData({
+      ["person_info.targetStep"]: e.detail.value,
+    });
+  },
+
+  updateWalk() {
+    tools.updateData.call(this);
   },
 
   /**
@@ -27,48 +78,23 @@ Page({
     amap.getWeather({
       success: res => {
         this.setData({
-          ["climate.liveData"]: res,
+          ["climate.liveData"]: res.liveData,
         });
-      },
-      fail: console.log,
-    });
-    amap.getWeather({
-      type: "forecast",
-      success: res => {
-        this.setData({
-          ["climate.forecast"]: res.forecast,
-        });
+        this.setText(res.liveData);
       },
       fail: console.log,
     });
 
-    wx.getWeRunData({
-      timeout: 10000,
-    })
-      .then(res => {
-        wx.cloud
-          .callFunction({
-            name: "login",
-            data: {
-              weRunData: wx.cloud.CloudID(res.cloudID),
-            },
-          })
-          .then(res => {
-            let weRunDataToday = res.result.event.weRunData.data.stepInfoList.pop();
-            console.log(weRunDataToday);
-            this.setData({
-              weRunDataToday: {
-                step: weRunDataToday.step,
-                time: new tools.myDate(weRunDataToday.timestamp * 1000).today(),
-              },
-            });
-          });
-      })
-      .catch(console.log);
-
-    setTimeout(() => {
-      console.log(JSON.stringify(this.data.climate, null, 2));
-    }, 2000);
+    // 天气预报
+    // amap.getWeather({
+    //   type: "forecast",
+    //   success: res => {
+    //     this.setData({
+    //       ["climate.forecast"]: res.forecast,
+    //     });
+    //   },
+    //   fail: console.log,
+    // });
   },
 
   /**
@@ -79,9 +105,30 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: async function () {
     tools.loadData.call(this, "remind.onShow");
     tools.wrappedIAC("remind");
+
+    if (this.data.step === undefined) {
+      try {
+        await wx.authorize({
+          scope: "scope.werun",
+        });
+        let encoded = await wx.getWeRunData({
+          timeout: 10000,
+        });
+        let decoded = await wx.cloud.callFunction({
+          name: "login",
+          data: {
+            weRunData: wx.cloud.CloudID(encoded.cloudID),
+          },
+        });
+        let step = decoded.result.event.weRunData.data.stepInfoList.pop().step;
+        this.setData({ step });
+      } catch (err) {
+        console.log(err);
+      }
+    }
   },
 
   /**

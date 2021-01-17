@@ -1,36 +1,69 @@
 <!-- pages/remind/remind.wxml -->
 <background></background>
-<view class="weathertext">天气</view>
-<view class="wea_image">
-  <image class="wth_image1" src="./icons/1.jpg" mode="widthFix"></image>
-  <image class="wth_image" src="./icons/2.jpg" mode="widthFix"></image>
-  <image class="wth_image" src="./icons/3.jpg" mode="widthFix"></image>
-</view>
-<view class="medicinehead">今日待服药物：</view>
-<view class="waittoeat" wx:for="{{person_info.medicine}}">
-  <image class="capsule" src="./icons/capsule.png" mode="widthFix"></image>
-  <view class="m1_name">{{item.name||"?"}}</view>
-  <view class="m1_howmuch">份量：{{item.amount||"?"}}</view>
-  <view class="m1_frequency">频率：{{item.dayIndex||"?"}} 天 {{item.timesIndex||"?"}} 次</view>
-  <view class="switch">
-    <switch type="switch" color="blue" checked="true" bindchange="listenerSwitch" />
+<view class="section">
+  <view class="head">天气</view>
+  <view class="weather">
+    <view class="top">
+      <image src="cloud://chuyan-5g4flozv2fa0a4f5.6368-chuyan-5g4flozv2fa0a4f5-1304712061/pages/remind/images/background.png" mode="scaleToFill"></image>
+      <view class="deg">
+        <text class="big">{{climate.liveData.temperature}}°</text>
+        <text>{{climate.liveData.weather}} | 湿度{{climate.liveData.humidity}}%</text>
+      </view>
+    </view>
+    <view class="middle">
+      <view class="info">
+        <image class="image" src="./icons/wind.png" mode="widthFix"></image>
+        <view class="title">风力风向</view>
+        <view class="text">{{climate.liveData.winddirection}}风{{climate.liveData.windpower}}级</view>
+      </view>
+      <view class="info">
+        <image class="image" src="./icons/{{text.clothes}}.png" mode="widthFix"></image>
+        <view class="title">穿衣指数</view>
+        <view class="text">寒冷</view>
+      </view>
+      <view class="info">
+        <image class="image" src="./icons/cold.png" mode="widthFix"></image>
+        <view class="title">感冒指数</view>
+        <view class="text">易发</view>
+      </view>
+    </view>
+    <view class="bottom">
+      <text style="color: #D28821;">温馨提示：</text>
+      <text>今天天气{{text.temp}}，{{text.wind}}，{{text.sick}}</text>
+    </view>
   </view>
 </view>
-<view>
-  <button class="new_mdc_button" size="mini" bindtap="new_mdc">更新药物清单</button>
+<view class="section">
+  <view class="head">今日待服药物</view>
+  <view class="medicine">
+    <view class="item" wx:for="{{person_info.medicine}}" wx:key="name">
+      <view class="up">
+        <image class="capsule" src="./icons/capsule.png" mode="widthFix"></image>
+        <view class="name">{{item.name||"?"}}</view>
+      </view>
+      <view class="down">
+        <view class="amount">份量：{{item.amount||"?"}}</view>
+        <view class="frequency">频率：{{item.dayIndex||"?"}} 天 {{item.timesIndex||"?"}} 次</view>
+        <view class="switch">
+          <switch type="switch" color="blue" checked="true" bindchange="listenerSwitch" />
+        </view>
+      </view>
+    </view>
+    <view class="new_mdc_button" bindtap="new_mdc">更新药物清单</view>
+  </view>
 </view>
-<view class="exercisehead">今日运动情况：</view>
-<view class="howExercise">
-  <text>\n</text>
-  <view class="alreadywalk">
-    <text>您今天的运动步数：</text>
-    <view class="input_alreadywalk" bindinput="alreadyInput">{{weRunDataToday.step}}</view>
-  </view>
-  <view class="needwalk">
-    <text>您需要达到的运动步数:</text>
-    <input class="input_needwalk" bindinput="yetInput" />
-  </view>
-  <view>
-    <button class="refreshwalk_button" size="mini" bindtap="refreshwalk">更新</button>
+<view class="section">
+  <view class="head">今日运动情况：</view>
+  <view class="we-run">
+    <view class="row">
+      <view class="text">您今天的运动步数：</view>
+      <button class="input btn" open-type="openSetting" wx:if="{{step===underfined}}">点击授权</button>
+      <view class="input" wx:else>{{step}}</view>
+    </view>
+    <view class="row">
+      <view class="text">您需要达到的运动步数:</view>
+      <input class="input" bindchange="stepChange" value="{{person_info.targetStep}}" />
+      <view class="refreshwalk_button" size="mini" bindtap="updateWalk">更新</view>
+    </view>
   </view>
 </view>
