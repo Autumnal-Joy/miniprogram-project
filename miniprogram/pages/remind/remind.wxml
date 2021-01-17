@@ -19,7 +19,7 @@
         </view>
       </view>
       <view class="info">
-        <image class="image" src="./icons/{{text.clothes}}.png" mode="widthFix"></image>
+        <image class="image" src="./icons/{{text.clothes||'coat'}}.png" mode="widthFix"></image>
         <view class="title">穿衣指数</view>
         <view class="text">{{text.temp||"?"}}</view>
       </view>
