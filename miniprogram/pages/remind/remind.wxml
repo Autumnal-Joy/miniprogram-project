@@ -6,30 +6,32 @@
     <view class="top">
       <image src="cloud://chuyan-5g4flozv2fa0a4f5.6368-chuyan-5g4flozv2fa0a4f5-1304712061/pages/remind/images/background.png" mode="scaleToFill"></image>
       <view class="deg">
-        <text class="big">{{climate.liveData.temperature}}°</text>
-        <text>{{climate.liveData.weather}} | 湿度{{climate.liveData.humidity}}%</text>
+        <text class="big">{{climate.liveData.temperature||"?"}}°</text>
+        <text>{{climate.liveData.weather||"?"}} | 湿度{{climate.liveData.humidity||"?"}}%</text>
       </view>
     </view>
     <view class="middle">
       <view class="info">
         <image class="image" src="./icons/wind.png" mode="widthFix"></image>
         <view class="title">风力风向</view>
-        <view class="text">{{climate.liveData.winddirection}}风{{climate.liveData.windpower}}级</view>
+        <view class="text">
+          {{climate.liveData.winddirection||"?"}}风{{climate.liveData.windpower||"?"}}级
+        </view>
       </view>
       <view class="info">
         <image class="image" src="./icons/{{text.clothes}}.png" mode="widthFix"></image>
         <view class="title">穿衣指数</view>
-        <view class="text">寒冷</view>
+        <view class="text">{{text.temp||"?"}}</view>
       </view>
       <view class="info">
         <image class="image" src="./icons/cold.png" mode="widthFix"></image>
         <view class="title">感冒指数</view>
-        <view class="text">易发</view>
+        <view class="text">{{text.sick||"?"}}</view>
       </view>
     </view>
     <view class="bottom">
       <text style="color: #D28821;">温馨提示：</text>
-      <text>今天天气{{text.temp}}，{{text.wind}}，{{text.sick}}</text>
+      <text>今天天气{{text.temp}}，{{text.wind}}，{{text.sick+"感冒，"}}{{text.remind}}</text>
     </view>
   </view>
 </view>

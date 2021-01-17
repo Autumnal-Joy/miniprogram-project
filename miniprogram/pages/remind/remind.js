@@ -6,14 +6,7 @@ Page({
   /**
    * 页面的初始数据
    */
-  data: {
-    text: {
-      temp: "寒冷",
-      clothes: "coat",
-      sick: "极易发感冒，记得穿厚点",
-      wind: "微风",
-    },
-  },
+  data: {},
 
   setText(data) {
     let t = data.temperature;
@@ -22,19 +15,23 @@ Page({
     if (t <= 5) {
       text.temp = "寒冷";
       text.clothes = "coat";
-      text.sick = "极易发感冒，记得穿厚点";
+      text.sick = "极易发";
+      text.remind = "记得穿厚点";
     } else if (t <= 15) {
       text.temp = "凉";
       text.clothes = "sweater";
-      text.sick = "较易发感冒，及时加衣服哦";
+      text.sick = "较易发";
+      text.remind = "及时加衣服哦";
     } else if (t <= 25) {
       text.temp = "舒适";
       text.clothes = "shirt";
-      text.sick = "易发感冒，别忘了保暖哦";
+      text.sick = "易发";
+      text.remind = "别忘了保暖哦";
     } else {
       text.temp = "炎热";
       text.clothes = "T-shirt";
-      text.sick = "不易发感冒，及时减衣服哦";
+      text.sick = "不易发";
+      text.remind = "及时减衣服哦";
     }
     if (w <= 1) {
       text.wind = "微风";
