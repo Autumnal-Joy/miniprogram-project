@@ -1,0 +1,82 @@
+/* miniprogram/pages/remind/medicine/medicine.wxss */
+.medicine {
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+  .reviseMedicine {
+    border: 3rpx solid black;
+    margin-top: 30rpx;
+    color: black;
+    font-size: smaller;
+    padding: 10rpx;
+    position: relative;
+    .head {
+      display: flex;
+      align-items: center;
+      .capsule {
+        width: 80rpx;
+      }
+      .order {
+        border: 3rpx solid gray;
+        color: #221ccf;
+        font-weight: bold;
+        font-size: larger;
+        border-radius: 8rpx;
+        height: min-content;
+        padding: 0 20rpx;
+      }
+    }
+    .row {
+      display: flex;
+      align-items: center;
+      margin-top: 10rpx;
+      label {
+        width: 5em;
+      }
+      .input {
+        border: 2rpx solid gray;
+        background-color: white;
+        padding: 10rpx;
+      }
+      .picker {
+        background-color: #fff;
+        width: 3em;
+        border: 3rpx solid #cccccc;
+        border-radius: 8rpx;
+        padding: 10rpx;
+      }
+    }
+    .sub {
+      right: 10rpx;
+      bottom: 10rpx;
+      background-color: #d81e06;
+    }
+  }
+  .btn {
+    position: absolute;
+    font-size: x-large;
+    width: 50rpx;
+    height: 50rpx;
+    text-align: center;
+    line-height: 45rpx;
+    color: white;
+    border-radius: 50%;
+  }
+  .add {
+    left: 10rpx;
+    bottom: -70rpx;
+    background-color: #5677fc;
+  }
+  .submit {
+    position: absolute;
+    background-color: #5677fc;
+    color: white;
+    padding: 20rpx;
+    width: 150rpx;
+    text-align: center;
+    border-radius: 10rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -100rpx;
+  }
+}

@@ -82,6 +82,17 @@
           "pathName": "pages/info/setInfo/setInfo",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/remind/medicine/medicine",
+          "pathName": "pages/remind/medicine/medicine",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/remind/remind",
+          "pathName": "pages/remind/remind",
+          "scene": null
         }
       ]
     }

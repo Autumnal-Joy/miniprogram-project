@@ -6,32 +6,31 @@
   <image class="wth_image" src="./icons/2.jpg" mode="widthFix"></image>
   <image class="wth_image" src="./icons/3.jpg" mode="widthFix"></image>
 </view>
-
 <view class="medicinehead">今日待服药物：</view>
-<view class="waittoeat">
+<view class="waittoeat" wx:for="{{person_info.medicine}}">
   <image class="capsule" src="./icons/capsule.png" mode="widthFix"></image>
-  <view class="m1_name">药物一名称</view>
-  <view class="m1_howmuch">份量：一勺</view>
-  <view class="m1_frequency">频率：一日两次</view>
+  <view class="m1_name">{{item.name||"?"}}</view>
+  <view class="m1_howmuch">份量：{{item.amount||"?"}}</view>
+  <view class="m1_frequency">频率：{{item.dayIndex||"?"}} 天 {{item.timesIndex||"?"}} 次</view>
   <view class="switch">
-    <switch type="switch" color="blue" checked="true" bindchange="listenerSwitch"/>
+    <switch type="switch" color="blue" checked="true" bindchange="listenerSwitch" />
   </view>
 </view>
 <view>
   <button class="new_mdc_button" size="mini" bindtap="new_mdc">更新药物清单</button>
 </view>
- <view class="exercisehead">今日运动情况：</view>
+<view class="exercisehead">今日运动情况：</view>
 <view class="howExercise">
-  <text> \n</text> 
- <view class="alreadywalk">
-   <text>您今天的运动步数：</text>
-  <input class="input_alreadywalk"  bindinput="alreadyInput" />
-</view>
-<view class="needwalk">
-  <text>您需要达到的运动步数:</text>
-  <input class="input_needwalk"   bindinput="yetInput" />
-</view>
-<view>
-  <button class="refreshwalk_button" size="mini"  bindtap="refreshwalk">更新</button>
-</view>
+  <text>\n</text>
+  <view class="alreadywalk">
+    <text>您今天的运动步数：</text>
+    <view class="input_alreadywalk" bindinput="alreadyInput">{{weRunDataToday.step}}</view>
+  </view>
+  <view class="needwalk">
+    <text>您需要达到的运动步数:</text>
+    <input class="input_needwalk" bindinput="yetInput" />
+  </view>
+  <view>
+    <button class="refreshwalk_button" size="mini" bindtap="refreshwalk">更新</button>
+  </view>
 </view>

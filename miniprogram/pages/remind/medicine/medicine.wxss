@@ -1,68 +1,82 @@
 /* miniprogram/pages/remind/medicine/medicine.wxss */
-.reviseMedicine{
+.medicine {
   width: 90%;
-  margin-left: 33rpx;
-  height: 360rpx;
+  margin: 0 auto;
+  position: relative;
+}
+.medicine .reviseMedicine {
   border: 3rpx solid black;
   margin-top: 30rpx;
-  color:black;
-  line-height: 80rpx;
+  color: black;
   font-size: smaller;
+  padding: 10rpx;
+  position: relative;
 }
-.capsule{
-  margin-top: 1rpx;
+.medicine .reviseMedicine .head {
+  display: flex;
+  align-items: center;
+}
+.medicine .reviseMedicine .head .capsule {
   width: 80rpx;
-  margin-left: 15rpx;
 }
-.head{
-  display: inline;
-  margin-left: 60rpx;
+.medicine .reviseMedicine .head .order {
   border: 3rpx solid gray;
-  color: rgb(24, 83, 245);
+  color: #221ccf;
   font-weight: bold;
   font-size: larger;
   border-radius: 8rpx;
+  height: min-content;
+  padding: 0 20rpx;
 }
-.input_name{
-  display: inline-table;
-  margin-left: 85rpx;
-  width: 260rpx;
-  height: 60rpx;
-  border: 2rpx solid gray;
-
-  background-color: white;
+.medicine .reviseMedicine .row {
+  display: flex;
+  align-items: center;
+  margin-top: 10rpx;
 }
-.input_howmuch{
-  display: inline-table;
-  margin-left: 26rpx;
-  width: 200rpx;
-  height: 60rpx;
+.medicine .reviseMedicine .row label {
+  width: 5em;
+}
+.medicine .reviseMedicine .row .input {
   border: 2rpx solid gray;
   background-color: white;
+  padding: 10rpx;
 }
-.mplus1_frequency{
-  display: inline-block;
-}
-.picker1{
-  display: inline-block;
-  margin-top: -100rpx;
-  margin-left: 25rpx;
+.medicine .reviseMedicine .row .picker {
   background-color: #fff;
-  width: 100rpx;
+  width: 3em;
   border: 3rpx solid #cccccc;
   border-radius: 8rpx;
+  padding: 10rpx;
 }
-.day{
-  display: inline-block;
+.medicine .reviseMedicine .sub {
+  right: 10rpx;
+  bottom: 10rpx;
+  background-color: #d81e06;
 }
-.picker2{
-  display: inline-block;
-  background-color: #fff;
-  width: 100rpx;
-  border: 3rpx solid #cccccc;
-  border-radius: 8rpx;
-  position: relative;
+.medicine .btn {
+  position: absolute;
+  font-size: x-large;
+  width: 50rpx;
+  height: 50rpx;
+  text-align: center;
+  line-height: 45rpx;
+  color: white;
+  border-radius: 50%;
 }
-.times{
-  display: inline;
+.medicine .add {
+  left: 10rpx;
+  bottom: -70rpx;
+  background-color: #5677fc;
+}
+.medicine .submit {
+  position: absolute;
+  background-color: #5677fc;
+  color: white;
+  padding: 20rpx;
+  width: 150rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -100rpx;
 }

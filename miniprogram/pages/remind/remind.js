@@ -7,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {},
+
   listenerSwitch: function (e) {
     console.log("switch类型开关当前状态-----", e.detail.value);
   },
@@ -15,6 +16,7 @@ Page({
       url: "/pages/remind/medicine/medicine",
     });
   },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -78,6 +80,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    tools.loadData.call(this, "remind.onShow");
     tools.wrappedIAC("remind");
   },
 
