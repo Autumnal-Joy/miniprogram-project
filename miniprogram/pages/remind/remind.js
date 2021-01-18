@@ -6,8 +6,40 @@ Page({
   /**
    * 页面的初始数据
    */
-  data: {
-    show: true,
+  data: {},
+
+  changeMask() {
+    this.setData({
+      mask: !this.data.mask,
+    });
+  },
+
+  notShow() {
+    this.changeMask();
+    this.setData({
+      ["person_info.remindOff"]: true,
+      ["person_info.remindTime"]: new tools.myDate().today(),
+    });
+  },
+
+  popup() {
+    let today = new tools.myDate().today();
+    let medicine = this.data.person_info.medicine.map(v => {
+      if (today !== v.updateTime) {
+        v.off = undefined;
+      }
+      return v;
+    });
+    this.setData({
+      ["person_info.medicine"]: medicine,
+    });
+    let person_info = this.data.person_info;
+    let off = today === person_info.remindTime && person_info.remindOff;
+    let needTakeMedicine = medicine.filter(v => !v.off).length;
+    let needRun = person_info.targetStep > this.data.step;
+    this.setData({
+      mask: !off && (needTakeMedicine || needRun),
+    });
   },
 
   setText(data) {
@@ -47,14 +79,14 @@ Page({
     this.setData({ text });
   },
 
-  listenerSwitch: function (e) {
-    console.log("switch类型开关当前状态-----", e.detail.value);
-  },
-
-  new_mdc: function (options) {
-    wx.navigateTo({
-      url: "/pages/remind/medicine/medicine",
+  onSwitch: function (e) {
+    let index = e.target.dataset.index;
+    let value = e.detail.value;
+    this.setData({
+      [`person_info.medicine[${index}].off`]: !value,
+      [`person_info.medicine[${index}].updateTime`]: new tools.myDate().today(),
     });
+    tools.updateData.call(this, "remind.onSwitch");
   },
 
   stepChange(e) {
@@ -63,27 +95,24 @@ Page({
     });
   },
 
-  updateWalk() {
+  setStepTarget() {
     tools.updateData.call(this);
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    // let amap = new amapFile.AMapWX({
-    //   key: "1100277b2a7f155bee88cd00fcb9397e",
-    // });
-    // amap.getWeather({
-    //   success: res => {
-    //     this.setData({
-    //       ["climate.liveData"]: res.liveData,
-    //     });
-    //     this.setText(res.liveData);
-    //   },
-    //   fail: console.log,
-    // });
-    // 天气预报
+  setWeather() {
+    let amap = new amapFile.AMapWX({
+      key: "1100277b2a7f155bee88cd00fcb9397e",
+    });
+    amap.getWeather({
+      success: res => {
+        this.setData({
+          ["climate.liveData"]: res.liveData,
+        });
+        this.setText(res.liveData);
+      },
+      fail: console.log,
+    });
+    // 天气预报;
     // amap.getWeather({
     //   type: "forecast",
     //   success: res => {
@@ -95,17 +124,7 @@ Page({
     // });
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {},
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: async function () {
-    tools.loadData.call(this, "remind.onShow");
-    // tools.wrappedIAC("remind");
+  async setWeRunData() {
     if (this.data.step === undefined) {
       try {
         await wx.authorize({
@@ -126,6 +145,28 @@ Page({
         console.log(err);
       }
     }
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    this.setWeather();
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {},
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: async function () {
+    tools.wrappedIAC("remind");
+    await tools.loadData.call(this, "remind.onShow");
+    await this.setWeRunData();
+    this.popup();
   },
 
   /**
