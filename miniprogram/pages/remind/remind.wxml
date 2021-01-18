@@ -12,7 +12,7 @@
         </block>
       </view>
       <view class="box">
-        <view class="title">您今天的微信运动步数是：</view>
+        <view class="title">您今天的微信运动步数是：{{step}}</view>
         <view class="text" wx:if="{{person_info.targetStep===undefined}}">请设定今天的运动要求！</view>
         <view class="text" wx:elif="{{step>person_info.targetStep}}">已经达到今天目标啦，继续保持哦！</view>
         <view class="text" wx:else>还没达到今天目标，要注意加强锻炼哦！</view>
