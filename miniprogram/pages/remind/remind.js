@@ -24,7 +24,7 @@ Page({
 
   popup() {
     let today = new tools.myDate().today();
-    let medicine = this.data.person_info.medicine.map(v => {
+    let medicine = (this.data.person_info.medicine || []).map(v => {
       if (today !== v.updateTime) {
         v.off = undefined;
       }
