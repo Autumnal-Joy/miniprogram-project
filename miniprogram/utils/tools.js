@@ -24,18 +24,18 @@ function myDate(...para) {
 async function loadData(functionName) {
   console.group(functionName);
   try {
-    var person_info = app.globalData.person_info;
-    if (!person_info) {
+    var personInfo = app.globalData.personInfo;
+    if (!personInfo) {
       throw "全局变量读取失败";
     }
-    console.log("读取全局变量", person_info);
+    console.log("读取全局变量", personInfo);
   } catch (err) {
     console.log(err);
     try {
-      var { data: person_info } = await wx.getStorage({
-        key: "person_info",
+      var { data: personInfo } = await wx.getStorage({
+        key: "personInfo",
       });
-      console.log("读取本地缓存", person_info);
+      console.log("读取本地缓存", personInfo);
     } catch (err) {
       console.log("本地缓存读取失败", err);
       try {
@@ -44,7 +44,7 @@ async function loadData(functionName) {
           .database({
             env: "chuyan-5g4flozv2fa0a4f5",
           })
-          .collection("person_info");
+          .collection("personInfo");
         let list = await collection
           .where({
             _openid,
@@ -52,18 +52,18 @@ async function loadData(functionName) {
           .get();
         console.log("读取云数据库", list);
         if (list.data.length) {
-          person_info = list.data[0];
+          personInfo = list.data[0];
         } else {
-          person_info = {};
+          personInfo = {};
         }
       } catch (err) {
         console.warn("云数据库读取失败", err);
-        person_info = {};
+        personInfo = {};
       } finally {
         try {
           let res = await wx.setStorage({
-            key: "person_info",
-            data: person_info,
+            key: "personInfo",
+            data: personInfo,
           });
           console.log("设置本地缓存", res);
         } catch (err) {
@@ -71,12 +71,12 @@ async function loadData(functionName) {
         }
       }
     } finally {
-      app.globalData.person_info = person_info;
-      console.log("设置全局变量", person_info);
+      app.globalData.personInfo = personInfo;
+      console.log("设置全局变量", personInfo);
     }
   } finally {
     this.setData({
-      person_info: { ...this.data.person_info, ...person_info },
+      personInfo: { ...this.data.personInfo, ...personInfo },
     });
   }
   console.groupEnd();
@@ -85,21 +85,21 @@ async function loadData(functionName) {
 async function updateData(functionName) {
   console.group(functionName);
   try {
-    var { data: person_info } = await wx.getStorage({
-      key: "person_info",
+    var { data: personInfo } = await wx.getStorage({
+      key: "personInfo",
     });
-    console.log("读取本地缓存", person_info);
+    console.log("读取本地缓存", personInfo);
   } catch (err) {
     console.log("本地缓存读取失败", err);
-    person_info = {};
+    personInfo = {};
   } finally {
-    person_info = { ...person_info, ...this.data.person_info };
-    app.globalData.person_info = person_info;
+    personInfo = { ...personInfo, ...this.data.personInfo };
+    app.globalData.personInfo = personInfo;
     try {
-      console.log("设置本地缓存", person_info);
+      console.log("设置本地缓存", personInfo);
       await wx.setStorage({
-        key: "person_info",
-        data: person_info,
+        key: "personInfo",
+        data: personInfo,
       });
     } catch (err) {
       console.warn("本地缓存设置失败", err);
@@ -110,7 +110,7 @@ async function updateData(functionName) {
         .database({
           env: "chuyan-5g4flozv2fa0a4f5",
         })
-        .collection("person_info");
+        .collection("personInfo");
 
       let list = await collection
         .where({
@@ -120,12 +120,12 @@ async function updateData(functionName) {
       console.log("读取云数据库", list.data);
       if (list.data.length) {
         let res = await collection.doc(list.data[0]._id).set({
-          data: { ...person_info, _openid: undefined, _id: undefined },
+          data: { ...personInfo, _openid: undefined, _id: undefined },
         });
         console.log("更新云数据库", res);
       } else {
         let res = await collection.add({
-          data: { ...person_info, _openid: undefined, _id: undefined },
+          data: { ...personInfo, _openid: undefined, _id: undefined },
         });
         console.log("创建云数据库记录", res);
       }
@@ -152,7 +152,7 @@ async function updateData(functionName) {
 }
 
 function delData() {
-  app.globalData.person_info = undefined;
+  app.globalData.personInfo = undefined;
   console.log("删除全局变量");
   wx.clearStorage();
   console.log("删除本地缓存");
@@ -161,7 +161,7 @@ function delData() {
       .database({
         env: "chuyan-5g4flozv2fa0a4f5",
       })
-      .collection("person_info")
+      .collection("personInfo")
       .where({
         _openid,
       })
@@ -174,7 +174,7 @@ function delData() {
 async function wrappedIAC(file) {
   return new Promise(async (res, rej) => {
     try {
-      var abbr = app.globalData.person_info.city.abbr;
+      var abbr = app.globalData.personInfo.city.abbr;
     } catch (error) {
       abbr = "Standard";
     }

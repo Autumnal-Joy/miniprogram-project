@@ -1,15 +1,11 @@
 {
   "pages": [
+    "pages/tabbar/index",
     "pages/index/index",
-    "pages/home/home",
-    "pages/info/info",
-    "pages/info/setInfo/setInfo",
-    "pages/remind/remind",
-    "pages/remind/medicine/medicine",
-    "pages/locate/locate",
-    "pages/route/route",
-    "pages/route/transport/transport",
-    "pages/switch/switch"
+    "pages/info/setInfo/index",
+    "pages/remind/medicine/index",
+    "pages/route/transport/index",
+    "pages/switch/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#000000",
@@ -20,35 +16,6 @@
   },
   "sitemapLocation": "sitemap.json",
   "style": "v2",
-  "tabBar": {
-    "list": [
-      {
-        "pagePath": "pages/info/info",
-        "iconPath": "./icons/info.png",
-        "selectedIconPath": "./icons/info_s.png"
-      },
-      {
-        "pagePath": "pages/remind/remind",
-        "iconPath": "./icons/remind.png",
-        "selectedIconPath": "./icons/remind_s.png"
-      },
-      {
-        "pagePath": "pages/home/home",
-        "iconPath": "./icons/home.png",
-        "selectedIconPath": "./icons/home_s.png"
-      },
-      {
-        "pagePath": "pages/locate/locate",
-        "iconPath": "./icons/locate.png",
-        "selectedIconPath": "./icons/locate_s.png"
-      },
-      {
-        "pagePath": "pages/route/route",
-        "iconPath": "./icons/route.png",
-        "selectedIconPath": "./icons/route_s.png"
-      }
-    ]
-  },
   "permission": {
     "scope.userLocation": {
       "desc": "获取位置信息"

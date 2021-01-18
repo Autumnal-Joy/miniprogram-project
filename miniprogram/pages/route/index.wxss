@@ -1,0 +1,38 @@
+.route .top {
+  padding: 30rpx;
+}
+.route .top .input-wrap {
+  display: flex;
+  align-items: center;
+}
+.route .top .input-wrap .image {
+  width: 90rpx;
+}
+.route .top .input-wrap .input {
+  flex-grow: 1;
+  background-color: white;
+  border: 1rpx solid #bbbbbb;
+  padding: 10rpx;
+  margin-right: 90rpx;
+}
+.route .middle {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  padding: 30rpx;
+}
+.route .middle .trans .image {
+  width: 80rpx;
+}
+.route .bottom {
+  width: 300rpx;
+  margin: auto;
+}
+.route .bottom .image {
+  width: 300rpx;
+}
+.route .bottom .text {
+  text-align: center;
+  font-size: xx-large;
+  font-weight: 600;
+}

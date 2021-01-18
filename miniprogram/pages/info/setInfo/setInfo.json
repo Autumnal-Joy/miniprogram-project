@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "background": "../../../components/background/background"
-  },
-  "navigationBarTitleText": "输入基本信息"
-}

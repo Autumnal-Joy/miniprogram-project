@@ -1,5 +1,5 @@
 <view class="to-switch">
-  <navigator class="navigator" target="self" url="../../pages/switch/switch" open-type="navigate">
-    <image class="image" src="../../icons/setting.png" mode="widthFix"></image>
+  <navigator class="navigator" target="self" url="/pages/switch/index" open-type="navigate">
+    <image class="image" src="/icons/setting.png" mode="widthFix"></image>
   </navigator>
 </view>

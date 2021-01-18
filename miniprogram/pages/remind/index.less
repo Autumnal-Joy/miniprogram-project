@@ -1,0 +1,165 @@
+/* pages/remind/remind.wxss */
+.content {
+  width: 90%;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background-color: #f3edb1;
+  .wrap {
+    padding: 10rpx;
+    .box {
+      padding: 40rpx;
+      .title {
+        font-weight: bold;
+      }
+    }
+    .box + .box {
+      border-top: 1rpx solid #888;
+    }
+  }
+  .btn {
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+    padding: 40rpx;
+    border-radius: 10rpx;
+  }
+  .confirm {
+    background-color: #add17f;
+    color: #02bb00;
+  }
+  .not-remind {
+    background-color: #ec8e72;
+    color: #2f5fc3;
+  }
+}
+.section {
+  margin: 30rpx 0;
+  .head {
+    border: 3rpx solid lightgrey;
+    border-radius: 3px;
+    font-weight: bold;
+    color: #1e18cb;
+    background-color: white;
+    width: fit-content;
+    min-width: 4em;
+    text-align: center;
+  }
+  .weather {
+    .top {
+      position: relative;
+      color: #1e18cb;
+      height: 250rpx;
+      .image {
+        width: 100%;
+        height: 250rpx;
+      }
+      .deg {
+        position: absolute;
+        top: 50%;
+        left: 30rpx;
+        transform: translateY(-50%);
+        .big {
+          font-size: 150rpx;
+        }
+      }
+    }
+    .middle {
+      background-color: #f5f4f4;
+      display: flex;
+      justify-content: space-between;
+      padding: 10rpx 40rpx;
+      .info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .image {
+          width: 125rpx;
+        }
+        .title {
+          font-weight: bold;
+        }
+        .text {
+          font-size: medium;
+        }
+      }
+    }
+    .bottom {
+      background-color: white;
+      padding: 20rpx 40rpx;
+    }
+  }
+  .medicine {
+    .item {
+      border-top: 3rpx solid black;
+      border-bottom: 3rpx solid black;
+      margin-bottom: 5rpx;
+      padding: 10rpx;
+      .up {
+        display: flex;
+        align-items: center;
+        .capsule {
+          width: 80rpx;
+        }
+        // .name {
+        // }
+      }
+      .down {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 40rpx;
+        // .amount {
+        // }
+        // .frequency {
+        // }
+        // .switch {
+        // }
+      }
+    }
+    .new_mdc_button {
+      width: fit-content;
+      padding: 20rpx;
+      margin: 10rpx;
+      margin-left: auto;
+      background-color: #5677fc;
+      color: white;
+      border-radius: 6rpx;
+    }
+  }
+  .we-run {
+    border-top: 3rpx solid black;
+    border-bottom: 3rpx solid black;
+    background-color: #e6f9df;
+    padding: 10rpx;
+    .row {
+      display: flex;
+      align-items: center;
+      padding: 10rpx;
+      .text {
+        width: 11em;
+      }
+      .input {
+        border: 2rpx solid gray;
+        border-radius: 10rpx;
+        background-color: white;
+        padding: 10rpx;
+        width: 200rpx;
+        height: 1.4rem;
+      }
+      .btn {
+        margin: 0;
+        box-sizing: content-box;
+      }
+      .refreshwalk_button {
+        border-radius: 10rpx;
+        color: white;
+        background-color: #5677fc;
+        width: fit-content;
+        padding: 10rpx;
+        margin-left: auto;
+      }
+    }
+  }
+}

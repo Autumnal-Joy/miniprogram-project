@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "info": "../info/index",
+    "remind": "../remind/index",
+    "home": "../home/index",
+    "locate": "../locate/index",
+    "route": "../route/index"
+  }
+}

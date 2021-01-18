@@ -1,0 +1,45 @@
+<!-- pages/info/setInfo/setInfo.wxml -->
+<background></background>
+<view class="set-info">
+  <view class="up">
+    <view class="text">姓名</view>
+    <view class="input">
+      <input bindchange="onInputChange" data-type="name" type="text" placeholder="例如: 张三" value="{{personInfo.name}}"></input>
+    </view>
+    <view class="text">请选择老人的出生年月</view>
+    <view class="input">
+      <picker mode="date" value="{{personInfo.birthday}}" start="{{picker.startDay}}" end="{{picker.endDay}}" bindchange="onPickerChange">
+        <view class="picker">{{personInfo.birthday}}</view>
+      </picker>
+    </view>
+    <view class="text">具体家庭住址</view>
+    <view class="input">
+      <input bindchange="onInputChange" data-type="home" type="text" placeholder=" " value="{{personInfo.home}}"></input>
+    </view>
+  </view>
+  <view class="middle">
+    <view class="text">既往病史</view>
+    <view class="input" wx:for="{{personInfo.medicalHistory}}" wx:key="index">
+      <input bindchange="onInputChange" data-type="medicalHistory" data-index="{{index}}" type="text" placeholder="" value="{{item}}"></input>
+      <view class="btn sub" data-index="{{index}}" data-type="medicalHistory" bind:tap="sub" wx:if="{{personInfo.medicalHistory.length > 1}}">
+        -
+      </view>
+    </view>
+    <view class="input">
+      <view class="btn add" bind:tap="add" data-type="medicalHistory">+</view>
+    </view>
+    <view class="text">紧急联系人电话</view>
+    <view class="input" wx:for="{{personInfo.emergencyCall}}" wx:key="index">
+      <input bindchange="onInputChange" data-type="emergencyCall" data-index="{{index}}" type="number" placeholder="（请注意确认输入的电话是否正确）" value="{{item}}"></input>
+      <view class="btn sub" data-index="{{index}}" data-type="emergencyCall" bind:tap="sub" wx:if="{{personInfo.emergencyCall.length > 1}}">
+        -
+      </view>
+    </view>
+    <view class="input">
+      <view class="btn add" bind:tap="add" data-type="emergencyCall">+</view>
+    </view>
+  </view>
+  <view class="down">
+    <view class="submit" bind:tap="onUpdate">确 认</view>
+  </view>
+</view>

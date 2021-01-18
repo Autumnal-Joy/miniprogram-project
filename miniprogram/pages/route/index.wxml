@@ -1,0 +1,51 @@
+<!-- pages/route/route.wxml -->
+<background></background>
+<to-switch></to-switch>
+<view class="route">
+  <view class="top">
+    <view class="input-wrap">
+      <image class="image" src="./icons/locate_g.png" mode="widthFix"></image>
+      <input class="input" placeholder="出发地" />
+    </view>
+    <view class="input-wrap">
+      <image class="image" src="./icons/locate_r.png" mode="widthFix"></image>
+      <input class="input" placeholder="目的地" />
+    </view>
+  </view>
+  <view class="middle">
+    <navigator target="self" url="../route/transport/index?type=underground_route" hover-class="navigator-hover" open-type="navigate">
+      <view class="trans">
+        <image class="image" src="./icons/underground.png" mode="widthFix"></image>
+        <view class="text">公交地铁</view>
+      </view>
+    </navigator>
+    <navigator target="self" url="../route/transport/index?type=train_route" hover-class="navigator-hover" open-type="navigate">
+      <view class="trans">
+        <image class="image" src="./icons/bus.png" mode="widthFix"></image>
+        <view class="text">客车</view>
+      </view>
+    </navigator>
+    <navigator target="self" url="../route/transport/index?type=taxi_route" hover-class="navigator-hover" open-type="navigate">
+      <view class="trans">
+        <image class="image" src="./icons/taxi.png" mode="widthFix"></image>
+        <view class="text">打车</view>
+      </view>
+    </navigator>
+    <navigator target="self" url="../route/transport/index?type=train_route" hover-class="navigator-hover" open-type="navigate">
+      <view class="trans">
+        <image class="image" src="./icons/train.png" mode="widthFix"></image>
+        <view class="text">火车</view>
+      </view>
+    </navigator>
+    <navigator target="self" url="../route/transport/index?type=walk_route" hover-class="navigator-hover" open-type="navigate">
+      <view class="trans">
+        <image class="image" src="./icons/walk.png" mode="widthFix"></image>
+        <view class="text">步行</view>
+      </view>
+    </navigator>
+  </view>
+  <view class="bottom">
+    <image class="image" src="./icons/speaker.png" mode="widthFix"></image>
+    <view class="text">按住说话</view>
+  </view>
+</view>

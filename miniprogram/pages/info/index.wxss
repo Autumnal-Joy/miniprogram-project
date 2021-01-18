@@ -1,0 +1,64 @@
+.info {
+  display: flex;
+  flex-direction: column;
+  font-size: large;
+}
+.info .up {
+  display: flex;
+  justify-content: space-between;
+}
+.info .up .update .button {
+  margin: 5rpx 5rpx 0 0;
+  padding: 20rpx 50rpx;
+  background-color: #5677fc;
+  color: #fff;
+  font-size: large;
+  box-shadow: 0rpx 20rpx 25rpx -15rpx #000;
+}
+.info .avatar .button {
+  width: 100rpx;
+  height: 100rpx;
+  margin: auto;
+  padding: 0;
+  border-radius: 50%;
+}
+.info .avatar .button .image {
+  width: 100rpx;
+}
+.info .down {
+  display: flex;
+  flex-direction: column;
+  padding: 30rpx 80rpx;
+}
+.info .down .text {
+  display: flex;
+  align-items: center;
+  padding: 10rpx;
+}
+.info .down .text-box {
+  border: 3rpx solid black;
+  padding: 10rpx;
+  min-height: 50rpx;
+}
+.info .down .text-box .item {
+  padding: 5rpx;
+}
+.info .down .row {
+  display: flex;
+  margin-top: 10rpx;
+}
+.info .down .row .text-box {
+  flex-grow: 1;
+}
+.delAll {
+  position: absolute;
+  left: 15rpx;
+  bottom: 15rpx;
+  padding: 20rpx;
+  background-color: #e74b3c;
+  color: white;
+  font-size: large;
+  font-weight: bold;
+  border-radius: 10rpx;
+  box-shadow: 0 25rpx 25rpx -20rpx #000;
+}

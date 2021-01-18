@@ -1,6 +1,4 @@
 // pages/index/index.js
-const tools = require("../../utils/tools");
-
 Page({
   /**
    * 页面的初始数据
@@ -46,7 +44,7 @@ Page({
     options = options || "";
     console.log(options);
     wx.reLaunch({
-      url: "../home/home" + options,
+      url: "../tabbar/index" + options,
     }).catch(console.log);
   },
 
@@ -95,9 +93,7 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-    tools.loadData.call(this, "index.onReady");
-  },
+  onReady: function () {},
 
   /**
    * 生命周期函数--监听页面显示

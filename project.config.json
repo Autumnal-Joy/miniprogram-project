@@ -54,44 +54,44 @@
     "miniprogram": {
       "list": [
         {
-          "name": "pages/locate/locate",
-          "pathName": "pages/locate/locate",
+          "name": "pages/locate/index",
+          "pathName": "pages/locate/index",
           "query": "",
           "scene": null
         },
         {
-          "name": "pages/switch/switch",
-          "pathName": "pages/switch/switch",
+          "name": "pages/switch/index",
+          "pathName": "pages/switch/index",
           "query": "",
           "scene": null
         },
         {
-          "name": "pages/home/home",
-          "pathName": "pages/home/home",
+          "name": "pages/home/index",
+          "pathName": "pages/home/index",
           "query": "",
           "scene": null
         },
         {
-          "name": "pages/info/info",
-          "pathName": "pages/info/info",
+          "name": "pages/info/index",
+          "pathName": "pages/info/index",
           "query": "",
           "scene": null
         },
         {
-          "name": "pages/info/setInfo/setInfo",
-          "pathName": "pages/info/setInfo/setInfo",
+          "name": "pages/info/setInfo/index",
+          "pathName": "pages/info/setInfo/index",
           "query": "",
           "scene": null
         },
         {
-          "name": "pages/remind/medicine/medicine",
-          "pathName": "pages/remind/medicine/medicine",
+          "name": "pages/remind/medicine/index",
+          "pathName": "pages/remind/medicine/index",
           "query": "",
           "scene": null
         },
         {
-          "name": "pages/remind/remind",
-          "pathName": "pages/remind/remind",
+          "name": "pages/remind/index",
+          "pathName": "pages/remind/index",
           "scene": null
         }
       ]

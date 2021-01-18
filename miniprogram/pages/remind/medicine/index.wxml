@@ -1,0 +1,33 @@
+<!-- miniprogram/pages/remind/medicine/medicine.wxml -->
+<view class="medicine">
+  <view class="reviseMedicine" wx:for="{{personInfo.medicine}}" wx:key="name">
+    <view class="head">
+      <image class="capsule" src="/pages/remind/icons/capsule.png" mode="widthFix"></image>
+      <view class="order">药物{{index+1}}</view>
+    </view>
+    <view class="row">
+      <label>名称</label>
+      <input data-index="{{index}}" class="input" placeholder="如：阿莫西林" bindchange="nameChange" value="{{personInfo.medicine[index].name}}" />
+    </view>
+    <view class="row">
+      <label>服用份量</label>
+      <input data-index="{{index}}" class="input" placeholder="如：半勺" value="{{personInfo.medicine[index].amount}}" bindchange="howmuchChange" />
+    </view>
+    <view class="row">
+      <label>服用频率</label>
+      <picker data-index="{{index}}" class="picker" mode="selector" range="{{Array}}" value="{{personInfo.medicine[index].dayIndex-1}}" bindchange="day">
+        {{personInfo.medicine[index].dayIndex||"请选择"}}
+      </picker>
+      <text>天</text>
+      <picker data-index="{{index}}" class="picker" mode="selector" range="{{Array}}" value="{{personInfo.medicine[index].timesIndex-1}}" bindchange="times">
+        {{personInfo.medicine[index].timesIndex||"请选择"}}
+      </picker>
+      <text>次</text>
+    </view>
+    <view class="btn sub" wx:if="{{personInfo.medicine.length > 1}}" data-index="{{index}}" bind:tap="sub">
+      -
+    </view>
+  </view>
+  <view class="btn add" bind:tap="add">+</view>
+  <view class="submit" bind:tap="onUpdate">确 认</view>
+</view>

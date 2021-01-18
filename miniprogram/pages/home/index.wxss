@@ -1,0 +1,83 @@
+.switch {
+  position: absolute;
+}
+.switch .text {
+  font-size: medium;
+  font-weight: bold;
+}
+.home {
+  display: flex;
+  flex-direction: column;
+  padding: 60rpx 30rpx;
+}
+.home .middle {
+  display: flex;
+  padding: 40rpx 0;
+  justify-content: space-around;
+}
+.home .middle .left .image {
+  width: 150rpx;
+}
+.home .middle .right {
+  display: flex;
+  align-items: center;
+}
+.home .middle .right .picker {
+  background-color: #fff;
+  width: 500rpx;
+  border: 3rpx solid #cccccc;
+  border-radius: 8rpx;
+  position: relative;
+}
+.home .middle .right .picker .phone {
+  padding: 20rpx;
+  color: #666666;
+  min-height: 45rpx;
+}
+.home .middle .right .picker .phone::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border: solid #666;
+  border-width: 0 0 1rpx 1rpx;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  position: absolute;
+  right: 20rpx;
+  top: 50%;
+}
+.home .top-bottom {
+  display: flex;
+  justify-content: center;
+}
+.home .top-bottom .wrap {
+  width: 400rpx;
+  height: 360rpx;
+}
+.home .top-bottom .wrap .icon .image {
+  display: block;
+  margin: auto;
+  width: 300rpx;
+}
+.home .top-bottom .wrap .text {
+  font-size: 41rpx;
+  font-weight: bold;
+  color: #7b0505;
+  text-align: center;
+}
+.home .top-bottom .wrap .up {
+  background-color: #d2efc6;
+  color: #38980c;
+}
+.home .top-bottom .wrap .down {
+  background-color: #edbcbc;
+  color: #dc2020;
+}
+.home .top-bottom .wrap .common {
+  height: 180rpx;
+  border-radius: 15rpx;
+  text-align: center;
+  line-height: 180rpx;
+  font-size: xx-large;
+  font-weight: bold;
+  box-shadow: 20rpx 20rpx 25rpx -15rpx #000;
+}

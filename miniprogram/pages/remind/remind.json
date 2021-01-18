@@ -1,7 +1,0 @@
-{
-  "usingComponents": {
-    "to-switch": "../../components/toSwitch/toSwitch",
-    "background": "../../components/background/background",
-    "mask": "../../components/mask/mask"
-  }
-}

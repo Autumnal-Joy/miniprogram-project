@@ -1,7 +1,0 @@
-<view class="table-bar">
-  <view class="images" wx:for="{{images}}" wx:key="key">
-    <navigator target="self" url="{{item.url}}" open-type="switchTab" hover-class="none">
-      <image class="image" src="{{item.src}}" mode="widthFix"></image>
-    </navigator>
-  </view>
-</view>

@@ -1,0 +1,11 @@
+.locate .box {
+  margin: auto;
+  margin-top: 33%;
+  width: 250rpx;
+}
+.locate .box .image {
+  width: 250rpx;
+}
+.locate .box .text {
+  font-size: small;
+}
