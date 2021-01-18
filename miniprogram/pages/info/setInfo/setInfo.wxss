@@ -25,7 +25,7 @@
   padding: 10rpx;
   background-color: #fff;
   height: 45rpx;
-  width: 200rpx;
+  width: 240rpx;
   line-height: 45rpx;
   text-align: center;
 }
