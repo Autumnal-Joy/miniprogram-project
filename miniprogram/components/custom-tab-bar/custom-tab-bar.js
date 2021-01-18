@@ -1,27 +1,16 @@
-{
-  "pages": [
-    "pages/index/index",
-    "pages/home/home",
-    "pages/info/info",
-    "pages/info/setInfo/setInfo",
-    "pages/remind/remind",
-    "pages/remind/medicine/medicine",
-    "pages/locate/locate",
-    "pages/route/route",
-    "pages/route/transport/transport",
-    "pages/switch/switch"
-  ],
-  "window": {
-    "navigationBarBackgroundColor": "#000000",
-    "navigationBarTextStyle": "white",
-    "navigationBarTitleText": "老人行无忧小程序",
-    "backgroundColor": "#F6F6F6",
-    "backgroundTextStyle": "light"
+// components/custom-tab-bar/custom-tab-bar.js
+Component({
+  /**
+   * 组件的属性列表
+   */
+  properties: {
+
   },
-  "sitemapLocation": "sitemap.json",
-  "style": "v2",
-  "tabBar": {
-    "custom": true,
+
+  /**
+   * 组件的初始数据
+   */
+  data: {
     "list": [
       {
         "pagePath": "pages/info/info",
@@ -49,11 +38,20 @@
         "selectedIconPath": "./icons/route_s.png"
       }
     ],
-    "usingComponents": {}
   },
-  "permission": {
-    "scope.userLocation": {
-      "desc": "获取位置信息"
+  attached() {
+  },
+  /**
+   * 组件的方法列表
+   */
+  methods: {
+    switchTab(e) {
+      const data = e.currentTarget.dataset
+      const url = data.path
+      wx.switchTab({url})
+      this.setData({
+        selected: data.index
+      })
     }
   }
-}
+})
