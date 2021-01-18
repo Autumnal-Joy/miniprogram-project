@@ -2,6 +2,8 @@
 const tools = require("../../utils/tools");
 const amapFile = require("../../libs/amap-wx.130");
 
+let today = new tools.myDate().today();
+
 Page({
   /**
    * 页面的初始数据
@@ -18,28 +20,26 @@ Page({
     this.changeMask();
     this.setData({
       ["person_info.remindOff"]: true,
-      ["person_info.remindTime"]: new tools.myDate().today(),
+      ["person_info.remindTime"]: today,
     });
+    tools.updateData.call(this, "remind.notShow");
   },
 
-  popup() {
-    let today = new tools.myDate().today();
-    let medicine = (this.data.person_info.medicine || []).map(v => {
-      if (today !== v.updateTime) {
-        v.off = undefined;
-      }
-      return v;
-    });
-    this.setData({
-      ["person_info.medicine"]: medicine,
-    });
+  async popup() {
     let person_info = this.data.person_info;
     let off = today === person_info.remindTime && person_info.remindOff;
-    let needTakeMedicine = medicine.filter(v => !v.off).length;
+    let needTakeMedicine = (person_info.medicine || []).filter(v => !v.off)
+      .length;
     let needRun = person_info.targetStep > this.data.step;
     this.setData({
       mask: !off && (needTakeMedicine || needRun),
     });
+    if (!off && needTakeMedicine) {
+      await tools.wrappedIAC("takeMedicine");
+    }
+    if (!off && needRun) {
+      tools.wrappedIAC("doExercise");
+    }
   },
 
   setText(data) {
@@ -84,7 +84,7 @@ Page({
     let value = e.detail.value;
     this.setData({
       [`person_info.medicine[${index}].off`]: !value,
-      [`person_info.medicine[${index}].updateTime`]: new tools.myDate().today(),
+      [`person_info.medicine[${index}].updateTime`]: today,
     });
     tools.updateData.call(this, "remind.onSwitch");
   },
@@ -150,8 +150,26 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: async function (options) {
     this.setWeather();
+    await this.setWeRunData();
+    await tools.loadData.call(this, "remind.onShow");
+    let flag = false;
+    let medicine = (this.data.person_info.medicine || []).map(v => {
+      if (today !== v.updateTime) {
+        flag = true;
+        v.off = undefined;
+        v.updateTime = today;
+      }
+      return v;
+    });
+    if (flag) {
+      this.setData({
+        ["person_info.medicine"]: medicine,
+      });
+      tools.updateData.call(this, "remind.onShow");
+    }
+    this.popup();
   },
 
   /**
@@ -165,8 +183,6 @@ Page({
   onShow: async function () {
     tools.wrappedIAC("remind");
     await tools.loadData.call(this, "remind.onShow");
-    await this.setWeRunData();
-    this.popup();
   },
 
   /**

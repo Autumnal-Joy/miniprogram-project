@@ -172,68 +172,73 @@ function delData() {
 }
 
 async function wrappedIAC(file) {
-  try {
-    var abbr = app.globalData.person_info.city.abbr;
-  } catch (error) {
-    abbr = "Standard";
-  }
-  let audio_city_mp3, audio_city_m4a, audio_std_mp3;
-  try {
-    await new Promise((resolve, reject) => {
-      audio_city_mp3 = wx.createInnerAudioContext();
-      audio_city_mp3.onEnded(() => {
-        audio_city_mp3.destroy();
-        console.log(`destroy audios/${abbr}/${file}.mp3`, audio_city_mp3);
-      });
-      audio_city_mp3.onCanplay(() => {
-        resolve();
-        console.log(`create audios/${abbr}/${file}.mp3`, audio_city_mp3);
-      });
-      setTimeout(reject, 500);
-      audio_city_mp3.src = `cloud://chuyan-5g4flozv2fa0a4f5.6368-chuyan-5g4flozv2fa0a4f5-1304712061/audios/${abbr}/${file}.mp3`;
-    });
-    audio_city_mp3.play();
-  } catch (error) {
-    audio_city_mp3.destroy();
-    console.log(`audios/${abbr}/${file}.mp3请求超时`);
+  return new Promise(async (res, rej) => {
+    try {
+      var abbr = app.globalData.person_info.city.abbr;
+    } catch (error) {
+      abbr = "Standard";
+    }
+    let audio_city_mp3, audio_city_m4a, audio_std_mp3;
     try {
       await new Promise((resolve, reject) => {
-        audio_city_m4a = wx.createInnerAudioContext();
-        audio_city_m4a.onEnded(() => {
-          audio_city_m4a.destroy();
-          console.log(`destroy audios/${abbr}/${file}.m4a`, audio_city_m4a);
+        audio_city_mp3 = wx.createInnerAudioContext();
+        audio_city_mp3.onEnded(() => {
+          audio_city_mp3.destroy();
+          console.log(`destroy audios/${abbr}/${file}.mp3`, audio_city_mp3);
+          res();
         });
-        audio_city_m4a.onCanplay(() => {
+        audio_city_mp3.onCanplay(() => {
           resolve();
-          console.log(`create audios/${abbr}/${file}.m4a`, audio_city_m4a);
+          console.log(`create audios/${abbr}/${file}.mp3`, audio_city_mp3);
         });
         setTimeout(reject, 500);
-        audio_city_m4a.src = `cloud://chuyan-5g4flozv2fa0a4f5.6368-chuyan-5g4flozv2fa0a4f5-1304712061/audios/${abbr}/${file}.m4a`;
-        audio_city_m4a.play();
+        audio_city_mp3.src = `cloud://chuyan-5g4flozv2fa0a4f5.6368-chuyan-5g4flozv2fa0a4f5-1304712061/audios/${abbr}/${file}.mp3`;
       });
+      audio_city_mp3.play();
     } catch (error) {
-      audio_city_m4a.destroy();
-      console.log(`audios/${abbr}/${file}.m4a请求超时`);
+      audio_city_mp3.destroy();
+      console.log(`audios/${abbr}/${file}.mp3请求超时`);
       try {
         await new Promise((resolve, reject) => {
-          audio_std_mp3 = wx.createInnerAudioContext();
-          audio_std_mp3.onEnded(() => {
-            audio_std_mp3.destroy();
-            console.log(`destroy audios/Standard/${file}.mp3`, audio_std_mp3);
+          audio_city_m4a = wx.createInnerAudioContext();
+          audio_city_m4a.onEnded(() => {
+            audio_city_m4a.destroy();
+            console.log(`destroy audios/${abbr}/${file}.m4a`, audio_city_m4a);
+            res();
           });
-          audio_std_mp3.onCanplay(() => {
+          audio_city_m4a.onCanplay(() => {
             resolve();
-            console.log(`create audios/Standard/${file}.mp3`, audio_std_mp3);
+            console.log(`create audios/${abbr}/${file}.m4a`, audio_city_m4a);
           });
           setTimeout(reject, 500);
-          audio_std_mp3.src = `cloud://chuyan-5g4flozv2fa0a4f5.6368-chuyan-5g4flozv2fa0a4f5-1304712061/audios/Standard/${file}.mp3`;
+          audio_city_m4a.src = `cloud://chuyan-5g4flozv2fa0a4f5.6368-chuyan-5g4flozv2fa0a4f5-1304712061/audios/${abbr}/${file}.m4a`;
+          audio_city_m4a.play();
         });
-        audio_std_mp3.play();
       } catch (error) {
-        audio_std_mp3.destroy();
-        console.log(`audios/Standard/${file}.mp3请求超时`);
-        console.log("音频加载失败");
+        audio_city_m4a.destroy();
+        console.log(`audios/${abbr}/${file}.m4a请求超时`);
+        try {
+          await new Promise((resolve, reject) => {
+            audio_std_mp3 = wx.createInnerAudioContext();
+            audio_std_mp3.onEnded(() => {
+              audio_std_mp3.destroy();
+              console.log(`destroy audios/Standard/${file}.mp3`, audio_std_mp3);
+              res();
+            });
+            audio_std_mp3.onCanplay(() => {
+              resolve();
+              console.log(`create audios/Standard/${file}.mp3`, audio_std_mp3);
+            });
+            setTimeout(reject, 500);
+            audio_std_mp3.src = `cloud://chuyan-5g4flozv2fa0a4f5.6368-chuyan-5g4flozv2fa0a4f5-1304712061/audios/Standard/${file}.mp3`;
+          });
+          audio_std_mp3.play();
+        } catch (error) {
+          audio_std_mp3.destroy();
+          console.log(`audios/Standard/${file}.mp3请求超时`);
+          rej("音频加载失败");
+        }
       }
     }
-  }
+  }).catch(console.log);
 }
