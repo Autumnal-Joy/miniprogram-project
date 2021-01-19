@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/tabbar/index",
     "pages/index/index",
+    "pages/tabbar/index",
     "pages/info/setInfo/index",
     "pages/remind/medicine/index",
     "pages/route/transport/index",
