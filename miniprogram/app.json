@@ -21,7 +21,6 @@
   "sitemapLocation": "sitemap.json",
   "style": "v2",
   "tabBar": {
-    "custom": true,
     "list": [
       {
         "pagePath": "pages/info/info",
@@ -48,8 +47,7 @@
         "iconPath": "./icons/route.png",
         "selectedIconPath": "./icons/route_s.png"
       }
-    ],
-    "usingComponents": {}
+    ]
   },
   "permission": {
     "scope.userLocation": {
